@@ -148,6 +148,12 @@ a linting error that it was an unresolved download.
 - I eventually had to start a new repository after an hour of using Google to try and solve the issue didnt work. 
  I copied and pasted the code I had wrote and installed all the appropriate files and it worked.
 
+- I created a custom class called deep-purple but instead of changing the text purple it was changing the background
+
+- To solve this I opened chrome developer tools and found that deep-purple was a custom class created by materialize which hadthe background color set to important so I just altered
+the name of my class to true-purple and used it instead.
+
+
 
 ### Deployment
 

@@ -1,59 +1,153 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Our Lockdown Reads
 
-Welcome USER_NAME,
+![our lockdown books logo file](static/images/our-lockdown-reads-logo.png)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+Our Lockdown reads is a community driven site where users can come to 
+review books they have read during lockdown and read other members reviews of other books.
+The website will build a database of the books our users have read and provide links to purchase 
+the books should our users choose to.
 
-## Gitpod Reminders
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## Table of contents
 
-`python3 -m http.server`
+## UX 
 
-A blue button should appear to click: _Make Public_,
+### Project Goals
 
-Another blue button should appear to click: _Open Browser_.
+The Goal of this project is to create a user friendly interface so users can submit the books that 
+they have read through lockdown and being able to read other users reviews , this goal will be achieved by 
+building a database and providing functionality to the users to create , read update and delete their posts.
+there will also be links to the books reviewed so if a user likes a book they can follow the link and 
+purchase he book for themselves.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+### User Goals 
 
-A blue button should appear to click: _Make Public_,
+- Create a Profile upon registering
 
-Another blue button should appear to click: _Open Browser_.
+- Create a book review
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+- Read other users reviews
 
-To log into the Heroku toolbelt CLI:
+- Be able to purchase a book I liked 
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+-  See which book reviews are most liked 
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidently make it public then you can create a new one with _Regenerate API Key_.
+### User Stories
 
-## Updates Since The Instructional Video
+As a first time user of the website I would like to:
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+- Register and create my profile
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+- Leave a review for a book I read during lockdown
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+- Read other users reviews
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+- Be able to follow a link to purchase a book whose review I liked
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+As a returning user I would like to:
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+- Edit or Update my profile
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+- Edit or Delete my book reviews
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+- See if any other users liked my reviews
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+- See if there is any new reviews since my last visit 
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+### Site Owner Goals 
 
----
+As the site owner I would like to: 
 
-Happy coding!
+- Build a database of all the books my users read during lockdown.
+
+- Be able to see which books were most liked so as to see what book I might read next
+
+- With affiliate links to online book stores the website could work as a business model where 
+I could generate revenue through my users purchasing books through the links provided in the reviews
+
+### User Requirements and Expectations
+
+- Well layed out UX design which is user friendly, easy to navigate,
+accessable and responsive
+
+- The user should be able to navigate easily throughout the site, this could easily be attained with theuse of a fixed navbar
+
+- The site should be able to handle, access, store and present back the data to the user 
+in clear , strucured way
+
+- The user should be the only one able to edit and delete his/her reviews while all users should be able to read the reviews
+
+- Editing and deleting of reviews and creating new reviews should be granted to users by the principles of C-R-U-D functionality
+
+## Structure Of The Project
+
+The main focus of the website is being able to utilize the database and display the correct conents to the user.
+I have used mongodb to create 3 collections for storing the data , they are users for 
+storing our registered users passwords and username to access their profile and create, update and delete their reviews. All users registered 
+or not can read all reviews.
+the next collection is labelled Books and this will store all the data
+for the book in which a user has reviewed and willbe stored under the following keys
+
+- _id
+- book_name
+- book_author
+- genre 
+- rating 
+- review_title
+- review
+- reviewed_by
+- image_url
+- purchase_link
+
+with the data that has been input to the fields we should be able to create 
+an informative site hat is pleasing to the eye.
+
+Lastly I hav created a collection for genres which will relate to the genre 
+field of the previous database, this will help to organize the books by genre 
+and I will be able to add more genres if or split an over subscribed genre into 
+2 seperate genres.
+
+## Design Choices 
+
+### Fonts
+
+### Colour Scheme
+
+### Icons
+
+### Wireframing
+
+### Features
+
+### Technologies Used
+
+- HTML
+
+- CSS
+
+- JAVASCRIPT 
+
+- JQUERY
+
+- PYTHON 
+
+- MONGODB
+
+- PYMONGO 
+
+- FLASK
+
+
+### Testing
+
+### Bugs / Fixes
+
+### Deployment
+
+### Credits
+
+- [randomkeygen.com](https://randomkeygen.com/) for allowing me to create a secure secret key.
+
+- [canva.com](https://www.canva.com/) for the free pro trial which allowed me to create my logo.
+
+- 

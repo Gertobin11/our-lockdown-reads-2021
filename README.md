@@ -142,6 +142,13 @@ and I will be able to add more genres if or split an over subscribed genre into
 
 ### Bugs / Fixes
 
+- Had an issue at the start of the project when I was installing flask anfd pymongo where I was getting 
+a linting error that it was an unresolved download.
+
+- I eventually had to start a new repository after an hour of using Google to try and solve the issue didnt work. 
+ I copied and pasted the code I had wrote and installed all the appropriate files and it worked.
+
+
 ### Deployment
 
 ### Credits

@@ -6,6 +6,12 @@
     color: #91c8c1;
 }
 
+.shadow-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+}
+
 .aqua-background {
     background-color: #26a69a;
 }
@@ -85,6 +91,7 @@ nav div ul li a {
 
 #main-page-logo {
    max-height: 200px;
+   padding: 20px;
 }
 
 .navbar-mob {
@@ -99,6 +106,29 @@ nav div ul li a {
     background-color: #C8C191;
 }
 
-nav .nav-wrapper {
-    justify-content: flex-start;
+nav a {
+    display: inline-flex;
+    color: #f2e065;
+    font-size: 1.6em;
+}
+
+nav .sidenav-trigger i {
+    color: #f2e065;
+    font-size: 1.2em;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* styling for hero image on index.html */
+
+.hero-class {
+    background-image: url(/static/images/book-hero-img.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 60vh;
+}
+
+#cta-section {
+    border: 3px solid #f2e065;
+
 }

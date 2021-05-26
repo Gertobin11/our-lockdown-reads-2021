@@ -6,6 +6,10 @@
     color: #91c8c1;
 }
 
+.aqua-background {
+    background-color: #26a69a;
+}
+
 .teal-background {
     background-color: #91c8c1;
 }
@@ -20,6 +24,10 @@
 
 .pale-gold {
     color: #C8C191;
+}
+
+.big-font {
+    font-size: 2.1em;
 }
 
 .pale-gold-background {
@@ -77,4 +85,20 @@ nav div ul li a {
 
 #main-page-logo {
    max-height: 200px;
+}
+
+.navbar-mob {
+    margin-top: 25px;
+}
+
+.sidenav li>a {
+    font-size: 2.1em;
+}
+
+.sidenav li:hover {
+    background-color: #C8C191;
+}
+
+nav .nav-wrapper {
+    justify-content: flex-start;
 }

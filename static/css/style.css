@@ -36,8 +36,20 @@
     font-size: 2.1em;
 }
 
+.background-view-height {
+    min-height: 100vh;
+}
+
 .pale-gold-background {
     background-color: #C8C191;
+}
+
+.bright-gold {
+    color: #f2e065;
+}
+
+.bright-gold-background {
+    background-color: #f2e065;
 }
 
 .true-purple {
@@ -68,6 +80,11 @@
 
 .row {
     margin-bottom: 0px;
+}
+
+.margin-top-btm-20 {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 /* navbar stylings */
@@ -168,3 +185,20 @@ nav .sidenav-trigger i {
     background-color: rgba(193,145,200, 0.8);
 }
 
+/* Stylings for registration page */
+
+#register-heading {
+    margin-top: 0px;
+    padding-top: 35px;
+    padding-bottom: 30px;
+    border: 15px solid #C191C8;
+}
+
+#register-button {
+    background-color: #f2e065;
+    min-width: 20vw;
+    color: black;
+    height: 50px;
+    font-weight: 600;
+    font-size: 1.5em;
+}

@@ -22,24 +22,24 @@
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">
                     arrow_back_ios</i><span class="josefine-font text-shadow"> Side Nav </span></a>
                 <ul class="right hide-on-med-and-down">
-                    <li class="light-purple-background"><a class="text-shadow-teal amatic-font" href="#">Home</a></li>
-                    <li class="light-purple-background"><a class="text-shadow-teal amatic-font border-left" href="#">Home</a></li>
-                    <li class="light-purple-background"><a class="text-shadow-teal amatic-font border-left" href="#">Home</a></li>
-                    <li class="light-purple-background"><a class="text-shadow-teal amatic-font border-left" href="#">Home</a></li>
-                    <li class="light-purple-background"><a class="text-shadow-teal amatic-font border-left" href="#">Home</a></li>
-                    <li class="light-purple-background"><a class="text-shadow-teal amatic-font border-left" href="#">Home</a></li>
+                    <li class="light-purple-background"><a class="text-shadow-teal amatic-font" href="{{ url_for('home') }}">Home</a></li>
+                    <li class="light-purple-background"><a class="text-shadow-teal amatic-font border-left" href="#">Reviews</a></li>
+                    <li class="light-purple-background"><a class="text-shadow-teal amatic-font border-left" href="#">Profile</a></li>
+                    <li class="light-purple-background"><a class="text-shadow-teal amatic-font border-left" href="#">Log In</a></li>
+                    <li class="light-purple-background"><a class="text-shadow-teal amatic-font border-left" href="{{ url_for('register') }}">Register</a></li>
+                    <li class="light-purple-background"><a class="text-shadow-teal amatic-font border-left" href="#">Log Out </a></li>
                 </ul>
             </div>
         </nav>
         <!-- collapsible mobile side bar-->
         <ul class="center-align sidenav aqua-background" id="mobile-demo">
             <li><h3 class="text-shadow amatic-font teal-background">Menu</h3></li>
-            <li class="navbar-mob"><a class="text-shadow amatic-font light-purple-background" href="#">Home</a></li>
-            <li class="navbar-mob"><a class="text-shadow amatic-font light-purple-background" href="#">Home</a></li>
-            <li class="navbar-mob"><a class="text-shadow amatic-font light-purple-background" href="#">Home</a></li>
-            <li class="navbar-mob"><a class="text-shadow amatic-font light-purple-background" href="#">Home</a></li>
-            <li class="navbar-mob"><a class="text-shadow amatic-font light-purple-background" href="#">Home</a></li>
-            <li class="navbar-mob"><a class="text-shadow amatic-font light-purple-background" href="#">Home</a></li>
+            <li class="navbar-mob"><a class="text-shadow amatic-font light-purple-background" href="{{ url_for('home') }}">Home</a></li>
+            <li class="navbar-mob"><a class="text-shadow amatic-font light-purple-background" href="#">Reviews</a></li>
+            <li class="navbar-mob"><a class="text-shadow amatic-font light-purple-background" href="#">Profile</a></li>
+            <li class="navbar-mob"><a class="text-shadow amatic-font light-purple-background" href="#">Log In</a></li>
+            <li class="navbar-mob"><a class="text-shadow amatic-font light-purple-background" href="{{ url_for('register') }}"></a>Register</a></li>
+            <li class="navbar-mob"><a class="text-shadow amatic-font light-purple-background" href="#">Log Out</a></li>
         </ul>
     </header>
     {% block content %}

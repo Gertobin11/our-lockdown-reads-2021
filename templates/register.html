@@ -8,15 +8,25 @@
                 <div class="row">
                     <div class="input-field margin-top-btm-20 col s8 offset-s2">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="username" name="username" type="text" class="black-text validate">
+                        <input id="username" name="username" type="text" pattern="^[a-zA-Z0-9]{3,15}$"
+                         required class="black-text validate">
                         <label for="username">Username</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="margin-top-btm-20 input-field col s8 offset-s2">
                         <i class="material-icons prefix">password</i>
-                        <input id="password" name="password" type="password" class="black-text validate">
+                        <input id="password" name="password" type="password" required
+                        minlength="5" maxlength="15" class="black-text validate">
                         <label for="password">Password</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="margin-top-btm-20 input-field col s8 offset-s2">
+                        <i class="material-icons prefix">password</i>
+                        <input id="confirm-password" name="confirm-password" type="password" 
+                        minlength="5" maxlength="15" required class="black-text validate">
+                        <label for="confirm-password">Confirm Password</label>
                     </div>
                 </div>
                 <div class="row">

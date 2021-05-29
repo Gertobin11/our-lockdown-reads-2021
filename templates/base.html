@@ -42,8 +42,24 @@
             <li class="navbar-mob"><a class="text-shadow amatic-font light-purple-background" href="#">Log Out</a></li>
         </ul>
     </header>
+
+    <section>
+        <!-- Section for displaying our flashed messages-->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="row center-align text-shadow flashes aqua-background">
+                        <h3 class="bright-gold">{{ message }}</h3>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </section>
+
+    <main>
     {% block content %}
     {% endblock %}
+    </main>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>

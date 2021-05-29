@@ -82,6 +82,10 @@
     margin-bottom: 0px;
 }
 
+.margin-top-30 {
+    margin-top: 30px;
+}
+
 .margin-top-btm-20 {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -189,8 +193,8 @@ nav .sidenav-trigger i {
 
 #register-heading {
     margin-top: 0px;
-    padding-top: 35px;
-    padding-bottom: 30px;
+    padding-top: 7px;
+    padding-bottom: 7px;
     border: 15px solid #C191C8;
 }
 
@@ -206,3 +210,4 @@ nav .sidenav-trigger i {
  h3 {
     margin-top: 0px;
 }
+

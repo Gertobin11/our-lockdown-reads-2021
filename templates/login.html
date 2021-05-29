@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 <section class="light-purple-background background-view-height">
-    <h3 id="register-heading" class="bright-gold-background center-align amatic-font">Register</h3>
+    <h3 id="register-heading" class="bright-gold-background center-align amatic-font">Log In</h3>
     <div class="row">
-        <form class="col s12" method="POST" action="{{ url_for('register') }}">
+        <form class="col s12" method="POST" action="{{ url_for('login') }}">
             <div class="card pale-teal-background">
                 <div class="row">
                     <div class="input-field margin-top-btm-20 col s8 offset-s2">
@@ -22,22 +22,14 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="margin-top-btm-20 input-field col s8 offset-s2">
-                        <i class="material-icons prefix">password</i>
-                        <input id="confirm-password" name="confirm-password" type="password" 
-                        minlength="5" maxlength="15" required class="black-text validate">
-                        <label for="confirm-password">Confirm Password</label>
-                    </div>
-                </div>
-                <div class="row">
                     <div class="center-align">
-                        <button id="register-button" class="margin-top-btm-20 josefin-font btn waves-effect waves-light" type="submit" name="action">Register
+                        <button id="log-in-button" class="margin-top-btm-20 josefin-font btn waves-effect waves-light" type="submit" name="action">Log In
                             <i class="material-icons right">send</i>
                         </button>
                     </div>
                 </div>
-                <div>
-                    <p class="center-align"><small>Already Registered? Log In <a href="{{ url_for('login') }}">Here</a></small></p>
+                <div class="center-align">
+                    <small>Not A Member? Create an Account <a href="{{ url_for('register') }}">Here</a></small>
                 </div>
             </div>
         </form>

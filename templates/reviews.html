@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="review-header bright-gold center-align text-shadow">Our Reviews</h2>
+<div class="row">
+    {% for book in books %}
+    <div class="col s12 m6 l4">
+      <div class="card">
+        <div class="card-image">
+          <img src="{{ book.image_url }}">
+          <span class="card-title">{{ book.book_name }} <small> by {{ book.book_author }}</small></span>
+        </div>
+        <div class="card-content">
+          <p>{{ book.review_title }} <small>by {{ book.reviewed_by }}</small></p>
+        </div>
+        <div class="card-action">
+          <a href="#">Read my review here!!!</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+
+
+
+{% endblock %}

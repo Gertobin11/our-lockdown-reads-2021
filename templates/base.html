@@ -23,11 +23,14 @@
                     arrow_back_ios</i><span class="josefine-font text-shadow"> Side Nav </span></a>
                 <ul class="right hide-on-med-and-down">
                     <li class="light-purple-background"><a class="text-shadow-teal amatic-font" href="{{ url_for('home') }}">Home</a></li>
-                    <li class="light-purple-background"><a class="text-shadow-teal amatic-font border-left" href="#">Reviews</a></li>
-                    <li class="light-purple-background"><a class="text-shadow-teal amatic-font border-left" href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-                    <li class="light-purple-background"><a class="text-shadow-teal amatic-font border-left" href="{{ url_for('login') }}">Log In</a></li>
-                    <li class="light-purple-background"><a class="text-shadow-teal amatic-font border-left" href="{{ url_for('register') }}">Register</a></li>
-                    <li class="light-purple-background"><a class="text-shadow-teal amatic-font border-left" href="{{ url_for('logout') }}">Log Out </a></li>
+                    {% if session.user %}
+                        <li class="light-purple-background"><a class="text-shadow-teal amatic-font border-left" href="#">Reviews</a></li>
+                        <li class="light-purple-background"><a class="text-shadow-teal amatic-font border-left" href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                        <li class="light-purple-background"><a class="text-shadow-teal amatic-font border-left" href="{{ url_for('logout') }}">Log Out </a></li>
+                    {% else %}
+                        <li class="light-purple-background"><a class="text-shadow-teal amatic-font border-left" href="{{ url_for('login') }}">Log In</a></li>
+                        <li class="light-purple-background"><a class="text-shadow-teal amatic-font border-left" href="{{ url_for('register') }}">Register</a></li>
+                    {% endif %}
                 </ul>
             </div>
         </nav>
@@ -35,11 +38,14 @@
         <ul class="center-align sidenav aqua-background" id="mobile-demo">
             <li><h3 class="text-shadow amatic-font teal-background">Menu</h3></li>
             <li class="navbar-mob"><a class="text-shadow amatic-font light-purple-background" href="{{ url_for('home') }}">Home</a></li>
+            {% if session.user %}
             <li class="navbar-mob"><a class="text-shadow amatic-font light-purple-background" href="#">Reviews</a></li>
             <li class="navbar-mob"><a class="text-shadow amatic-font light-purple-background" href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+            <li class="navbar-mob"><a class="text-shadow amatic-font light-purple-background" href="{{ url_for('logout') }}">Log Out</a></li>
+            {% else %}
             <li class="navbar-mob"><a class="text-shadow amatic-font light-purple-background" href="{{ url_for('login') }}">Log In</a></li>
             <li class="navbar-mob"><a class="text-shadow amatic-font light-purple-background" href="{{ url_for('register') }}"></a>Register</a></li>
-            <li class="navbar-mob"><a class="text-shadow amatic-font light-purple-background" href="{{ url_for('logout') }}">Log Out</a></li>
+            {% endif %}
         </ul>
     </header>
 

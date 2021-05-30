@@ -25,6 +25,7 @@
                     <li class="light-purple-background"><a class="text-shadow-teal amatic-font" href="{{ url_for('home') }}">Home</a></li>
                     {% if session.user %}
                         <li class="light-purple-background"><a class="text-shadow-teal amatic-font border-left" href="{{ url_for('reviews') }}">Reviews</a></li>
+                        <li class="light-purple-background"><a class="text-shadow-teal amatic-font border-left" href="{{ url_for('add_review') }}">Add A Review</a></li>
                         <li class="light-purple-background"><a class="text-shadow-teal amatic-font border-left" href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                         <li class="light-purple-background"><a class="text-shadow-teal amatic-font border-left" href="{{ url_for('logout') }}">Log Out </a></li>
                     {% else %}
@@ -40,6 +41,7 @@
             <li class="navbar-mob"><a class="text-shadow amatic-font light-purple-background" href="{{ url_for('home') }}">Home</a></li>
             {% if session.user %}
             <li class="navbar-mob"><a class="text-shadow amatic-font light-purple-background" href="{{ url_for('reviews') }}">Reviews</a></li>
+            <li class="navbar-mob"><a class="text-shadow amatic-font light-purple-background" href="{{ url_for('reviews') }}">Add A Review</a></li>
             <li class="navbar-mob"><a class="text-shadow amatic-font light-purple-background" href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
             <li class="navbar-mob"><a class="text-shadow amatic-font light-purple-background" href="{{ url_for('logout') }}">Log Out</a></li>
             {% else %}

@@ -107,6 +107,15 @@ def reviews():
     return render_template("reviews.html", books=books)
 
 
+@app.route
+
+
+@app.route("/add_review")
+def add_review():
+    genres = mongo.db.genres.find().sort("genre_name", 1)
+    return render_template("add_review.html", genres=genres)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

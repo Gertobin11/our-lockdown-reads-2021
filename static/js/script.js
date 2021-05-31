@@ -4,5 +4,3 @@ $(document).ready(function(){
     $('select').formSelect();
   });
 
-$('#review').val('New Text');
-  M.textareaAutoResize($('#review'));

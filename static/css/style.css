@@ -215,3 +215,16 @@ nav .sidenav-trigger i {
     margin-top: 0px;
     padding-top: 20px;
 }
+
+/* styling for the reviews page */
+
+/* style for making images fit the content container and keep the aspect found a helpful tutorial here: https://www.w3schools.com/css/css3_object-fit.asp */
+
+.card .card-image img {
+    object-fit: cover;
+    height: 250px;
+}
+
+.card .card-content {
+    height: 75px;
+}

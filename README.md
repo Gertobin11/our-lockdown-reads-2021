@@ -153,7 +153,11 @@ a linting error that it was an unresolved download.
 - To solve this I opened chrome developer tools and found that deep-purple was a custom class created by materialize which hadthe background color set to important so I just altered
 the name of my class to true-purple and used it instead.
 
+- Encountered a bug where the profiles were not displaying evenly on the page , it appeared that some of the reviews were skipping the 
+columns allocated to them.
 
+- Trying to solve this problem I saw that the card content part of the cards was varying in height, causing the subsequent cards to 'pop' to
+the next column that had the appropriate space, I solved this by giving all the card content the uniform height of 75px.
 
 ### Deployment
 

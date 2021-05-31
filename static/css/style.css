@@ -228,3 +228,8 @@ nav .sidenav-trigger i {
 .card .card-content {
     height: 75px;
 }
+
+.card .card-image .card-title {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+}

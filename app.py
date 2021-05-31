@@ -110,8 +110,23 @@ def reviews():
 @app.route
 
 
-@app.route("/add_review")
+@app.route("/add_review", methods=["GET", "POST"])
 def add_review():
+    if request.method == "POST":
+        review = {
+            "book_name": request.form.get("book_name"),
+            "book_author": request.form.get("book_author"),
+            "genre": request.form.get("genre"),
+            "rating": request.form.get("rating"),
+            "review_title": request.form.get("review_title"),
+            "review": request.form.get("review"),
+            "reviewed_by": session["user"],
+            "image_url": request.form.get("image_url"),
+            "purchase_link": request.form.get("purchase_link")
+        }
+        mongo.db.books.insert_one(review)
+        flash("Your review has been recieved!")
+        return redirect(url_for("reviews"))
     genres = mongo.db.genres.find().sort("genre_name", 1)
     return render_template("add_review.html", genres=genres)
 

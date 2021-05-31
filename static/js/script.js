@@ -3,3 +3,6 @@ $(document).ready(function(){
     $('.carousel').carousel();
     $('select').formSelect();
   });
+
+$('#review').val('New Text');
+  M.textareaAutoResize($('#review'));

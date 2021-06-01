@@ -3,7 +3,8 @@
 <div id="book-display-container" class=" row center-align aqua-background">
     <img src="{{book.image_url}}" alt="image of the chosen books cover or scene">
     <h2 class="bright-gold amatic-font text-shadow">{{ book.book_name}} <em>by {{ book.book_author}}</em></h2>
-    <h4 class="light-purple josefin-font text-shadow">{{ book.review_title }} <em> reviewed by {{ book.reviewed_by }}</em></h4>
+    <h4 class="light-purple josefin-font text-shadow">{{ book.review_title }} <em> reviewed by
+            {{ book.reviewed_by }}</em></h4>
     <h5 class="bright-gold text-shadow">My Rating : <strong>{{ book.rating }}</strong> <small>/ 10</small></h5>
     <h6 class="light-purple text-shadow">Genre : <em>{{  book.genre }}</em></h6>
     <p class="col s10 offset-s1 m8 offset-m2">{{ book.review }} <br>
@@ -11,16 +12,18 @@
         <br>
         <!-- adding an affiliate link so as to make the website workable form a business standpoint -->
         <a class=" bright-gold text-shadow underline" href="{{ book.purchase_link }}">You Can Buy This Book
-        Here!!!</a><br>
+            Here!!!</a><br>
         <br>
         <em>By clicking the above link you will be directed to an
-        affiliate of ours where you can purchase the book,
-        we may make a small financial gain from this transaction but this wont increase the cost of your purchase.
-        By doing this you are supporting
-        the site and for that you have our appreciation</em>
-
+            affiliate of ours where you can purchase the book,
+            we may make a small financial gain from this transaction but this wont increase the cost of your purchase.
+            By doing this you are supporting
+            the site and for that you have our appreciation</em>
+        <br>
+        <br>
+        <a href="{{ url_for('reviews') }}" class="btn light-purple-background">
+            <i class="bright-gold material-icons prefix">arrow_back</i> Back To Reviews
+        </a>
     </p>
-    <!-- adding an affiliate link so as to make the website workable form a business standpoint -->
-    <a href=""></a>
 </div>
 {% endblock %}

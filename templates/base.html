@@ -17,7 +17,7 @@
                 class="responsive-img" alt="logo for the Our Lockdown Reads website">
             </div>
         </div>
-        <nav role="navigation">
+        <nav>
             <div class="nav-wrapper light-purple-background center-nav">
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">
                     arrow_back_ios</i><span class="josefine-font text-shadow"> Side Nav </span></a>
@@ -46,7 +46,7 @@
             <li class="navbar-mob"><a class="text-shadow amatic-font light-purple-background" href="{{ url_for('logout') }}">Log Out</a></li>
             {% else %}
             <li class="navbar-mob"><a class="text-shadow amatic-font light-purple-background" href="{{ url_for('login') }}">Log In</a></li>
-            <li class="navbar-mob"><a class="text-shadow amatic-font light-purple-background" href="{{ url_for('register') }}"></a>Register</a></li>
+            <li class="navbar-mob"><a class="text-shadow amatic-font light-purple-background" href="{{ url_for('register') }}">Register</a></li>
             {% endif %}
         </ul>
     </header>

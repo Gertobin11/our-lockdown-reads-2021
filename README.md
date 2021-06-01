@@ -159,6 +159,10 @@ columns allocated to them.
 - Trying to solve this problem I saw that the card content part of the cards was varying in height, causing the subsequent cards to 'pop' to
 the next column that had the appropriate space, I solved this by giving all the card content the uniform height of 75px.
 
+- I encountered a bug where the genre of the books reviewed was saving to the database as Null.
+
+- I had the id of genre as genre_name instead of just genre as genre_name is used in a different database
+
 ### Deployment
 
 ### Credits

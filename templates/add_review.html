@@ -26,13 +26,13 @@
             <div class="row">
                 <div class="input-field col s8 offset-s2">
                     <i class="true-purple material-icons prefix">menu_book</i>
-                    <select id="genre_name" name="genre_name" class="validate" required>
+                    <select id="genre" name="genre" class="validate" required>
                         <option value="" disabled selected>Choose the books genre</option>
                         {% for genre in genres %}
                         <option value="{{ genre.genre_name }}">{{ genre.genre_name }}</option>
                         {% endfor %}
                     </select>
-                    <label for="genre_name">Choose Genre</label>
+                    <label for="genre">Choose Genre</label>
                 </div>
             </div>
             <!--number input type for the book rating-->

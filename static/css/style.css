@@ -233,3 +233,12 @@ nav .sidenav-trigger i {
     background-color: rgba(0, 0, 0, 0.5);
     width: 100%;
 }
+
+/* style for displaying the selected book */
+
+#book-display-container img {
+    width: 100%;
+    height: 45vh;
+    object-fit: contain;
+    margin-top: 45px;
+}

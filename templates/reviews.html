@@ -13,7 +13,7 @@
           <p>{{ book.review_title }} <small>by {{ book.reviewed_by }}</small></p>
         </div>
         <div class="card-action">
-          <a href="#">Read my review here!!!</a>
+          <a href="{{ url_for('display_book', book_id=book._id) }}">Read my review here!!!</a>
         </div>
       </div>
     </div>

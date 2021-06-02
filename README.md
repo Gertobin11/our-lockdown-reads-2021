@@ -163,6 +163,10 @@ the next column that had the appropriate space, I solved this by giving all the 
 
 - I had the id of genre as genre_name instead of just genre as genre_name is used in a different database
 
+- I encountered a problem where the Return home button on the review page pushed to the right when only one item appeared on the bottom row
+
+- I solved this problem by applying the css property of margin-right: 35vmin , to ensure that there was sufficient margin on the right to give the button its own row
+
 ### Deployment
 
 ### Credits

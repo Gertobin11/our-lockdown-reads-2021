@@ -118,6 +118,10 @@ nav div ul li a {
     margin-left: 10px;
 }
 
+.block {
+    display: block;
+}
+
 .border-left {
     border-left: 5px solid #C8C191;
 }
@@ -240,6 +244,12 @@ nav .sidenav-trigger i {
 .card .card-image .card-title {
     background-color: rgba(0, 0, 0, 0.5);
     width: 100%;
+}
+
+/* added this styling to stop the button pushing up right */
+
+#return-home-btn {
+    margin-right: 35vmin;
 }
 
 /* style for displaying the selected book */

@@ -5,7 +5,8 @@
         <div class="col s12">
             <div class="card pale-teal-background">
                 <h3 class="margin-btm-0 pale-gold-background center-align amatic-font">{{ username }}'s Profile</h3>
-                <h5 class="margin-top-0 center-align josefin-font light-purple-background">Reviews Posted by : {{ username }}</h5>
+                <h5 class="margin-top-0 center-align josefin-font light-purple-background">Reviews Posted by :
+                    {{ username }}</h5>
             </div>
         </div>
         <!-- template logic for showing the user just the reviews they created -->
@@ -22,8 +23,25 @@
                 </div>
                 <!-- buttons to trigger the edit and delete functions for the reviews -->
                 <div class="card-action center-align">
-                    <a href="{{ url_for('edit_review', book_id=book._id) }}" class="waves-effect waves-light btn blue"><i class="material-icons left">edit</i>Edit</a>
-                    <a href="{{ url_for('delete_review', book_id=book._id) }}" class="waves-effect waves-light btn red"><i class="material-icons left">delete</i>Delete</a>
+                    <a href="{{ url_for('edit_review', book_id=book._id) }}"
+                        class="waves-effect waves-light btn blue"><i class="material-icons left">edit</i>Edit</a>
+                    <!-- Modal Trigger -->
+                    <a href="#modal1" class="waves-effect waves-light modal-trigger btn red"><i
+                            class="material-icons left">delete</i>Delete</a>
+
+                    <!-- Modal Structure -->
+                    <div id="modal1" class="modal">
+                        <div class="modal-content">
+                            <h4 class="aqua-background">Are You Sure?</h4>
+                            <p class="light-purple-background">To delete your review, press the delete button below, otherwise press cancel</p>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="{{ url_for('delete_review', book_id=book._id) }}"
+                                class="waves-effect waves-light modal-trigger btn red">Delete</a>
+                            <a href="{{ url_for('profile', username=session['user']) }}"
+                                class="modal-close waves-effect waves-green aqua-background btn-flat">Cancel</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

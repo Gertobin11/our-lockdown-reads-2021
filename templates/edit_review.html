@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="center-align bright-gold amatic-font text-shadow h3-header">Edit Your Review!</h2>
+<div class="row">
+    <form class="col s12" method="POST" action="{{ url_for('edit_review', book_id=book._id) }}">
+        <div class="card pale-teal-background">
+            <!--input for the books title-->
+            <div class="row">
+                <div class="input-field margin-top-btm-20 col s8 offset-s2">
+                    <i class="true-purple material-icons prefix">title</i>
+                    <input id="book_name" name="book_name" type="text" minlength="3" maxlength="70" required
+                        class="black-text validate">
+                    <label for="book_name">Book Title</label>
+                </div>
+            </div>
+            <!--input for the authors name-->
+            <div class="row">
+                <div class="input-field margin-top-btm-20 col s8 offset-s2">
+                    <i class="true-purple material-icons prefix">create</i>
+                    <input id="book_author" name="book_author" type="text" minlength="3" maxlength="70" required
+                        class="black-text validate">
+                    <label for="book_author">Author</label>
+                </div>
+            </div>
+            <!--dropdown selector for the book genre from genres db-->
+            <div class="row">
+                <div class="input-field col s8 offset-s2">
+                    <i class="true-purple material-icons prefix">menu_book</i>
+                    <select id="genre" name="genre" class="validate" required>
+                        <option value="" disabled selected>Choose the books genre</option>
+                        {% for genre in genres %}
+                        <option value="{{ genre.genre_name }}">{{ genre.genre_name }}</option>
+                        {% endfor %}
+                    </select>
+                    <label for="genre">Choose Genre</label>
+                </div>
+            </div>
+            <!--number input type for the book rating-->
+            <div class="row">
+                <div class="input-field margin-top-btm-20 col s8 offset-s2">
+                    <i class="true-purple material-icons prefix">star</i>
+                    <input id="rating" name="rating" type="number" min="0" max="10" required
+                        class="black-text validate">
+                    <label for="rating">Rating ( 0 - 10 )</label>
+                </div>
+            </div>
+            <!--input filed for the review title-->
+            <div class="row">
+                <div class="input-field margin-top-btm-20 col s8 offset-s2">
+                    <i class="true-purple material-icons prefix">title</i>
+                    <input id="review_title" name="review_title" type="text" minlength="3" maxlength="70" required
+                        class="black-text validate">
+                    <label for="review_title">Review Title</label>
+                </div>
+            </div>
+            <!--text area input for our review-->
+            <div class="row">
+                <div class="input-field margin-top-btm-20 col s8 offset-s2">
+                    <i class="true-purple material-icons prefix">create</i>
+                    <textarea id="review" name="review" class="materialize-textarea" required></textarea>
+                    <label for="review">Your Review</label>
+                </div>
+            </div>
+            <!--input field for the book image url-->
+            <div class="row">
+                <div class="input-field margin-top-btm-20 col s8 offset-s2">
+                    <i class="true-purple material-icons prefix">link</i>
+                    <input id="image_url" name="image_url" type="text" minlength="3" required
+                        class="black-text validate">
+                    <label for="image_url">Book Cover URL</label>
+                </div>
+            </div>
+            <!--input field for purchase link-->
+            <div class="row">
+                <div class="input-field margin-top-btm-20 col s8 offset-s2">
+                    <i class="true-purple material-icons prefix">link</i>
+                    <input id="purchase_link" name="purchase_link" type="text" minlength="3" required
+                        class="black-text validate">
+                    <label for="purchase_link">Link To Purchase Book</label>
+                </div>
+            </div>
+            <!--submit button-->
+            <div class="row">
+                <div class="center-align">
+                    <button class="margin-top-btm-20 btn waves-effect waves-light bright-gold-background black-text"
+                        type="submit">Save Edit
+                        <i class="material-icons right">send</i>
+                    </button>
+                    <button class="margin-top-btm-20 btn waves-effect waves-light red black-text"
+                        type="submit">Cancel
+                        <i class="material-icons right">delete</i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

@@ -8,6 +8,7 @@
                 <h5 class="margin-top-0 center-align josefin-font light-purple-background">Reviews Posted by : {{ username }}</h5>
             </div>
         </div>
+        <!-- template logic for showing the user just the reviews they created -->
         {% for book in books %}
         {% if session.user|lower == book.reviewed_by|lower %}
         <div class="col s12 m6 l4">
@@ -19,8 +20,9 @@
                 <div class="card-content">
                     <p>{{ book.review_title }} <small>by {{ book.reviewed_by }}</small></p>
                 </div>
+                <!-- buttons to trigger the edit and delete functions for the reviews -->
                 <div class="card-action center-align">
-                    <a class="waves-effect waves-light btn blue"><i class="material-icons left">edit</i>Edit</a>
+                    <a href="{{ url_for('edit_review', book_id=book._id) }}" class="waves-effect waves-light btn blue"><i class="material-icons left">edit</i>Edit</a>
                     <a class="waves-effect waves-light btn red"><i class="material-icons left">delete</i>Delete</a>
                 </div>
             </div>

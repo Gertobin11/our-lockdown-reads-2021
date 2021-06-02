@@ -137,6 +137,22 @@ def add_review():
 
 @app.route("/edit_review/<book_id>", methods=["GET", "POST"])
 def edit_review(book_id):
+    if request.method == "POST":
+        submit = {
+            "book_name": request.form.get("book_name"),
+            "book_author": request.form.get("book_author"),
+            "genre": request.form.get("genre"),
+            "rating": request.form.get("rating"),
+            "review_title": request.form.get("review_title"),
+            "review": request.form.get("review"),
+            "reviewed_by": session["user"],
+            "image_url": request.form.get("image_url"),
+            "purchase_link": request.form.get("purchase_link")
+        }
+        mongo.db.books.update({"_id": ObjectId(book_id)}, submit)
+        flash("Your review has been edited successfully")
+        return redirect(url_for('profile', username=session['user']))
+
     book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
     genres = mongo.db.genres.find().sort("genre_name", 1)
     return render_template("edit_review.html", book=book, genres=genres)

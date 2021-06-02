@@ -91,6 +91,14 @@
     margin-bottom: 20px;
 }
 
+.margin-btm-0 {
+    margin-bottom: 0px;
+}
+
+.margin-top-0 {
+    margin-top: 0px;
+}
+
 /* navbar stylings */
 
 #logo-div {

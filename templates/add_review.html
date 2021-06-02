@@ -86,6 +86,11 @@
                         type="submit">Leave Review
                         <i class="material-icons right">send</i>
                     </button>
+                    <!-- added button to return to profile for cancelling -->
+                    <a class="margin-top-btm-20 btn waves-effect waves-light red black-text" type="submit"
+                        href="{{ url_for('profile', username=session['user']) }}">Cancel
+                        <i class="material-icons right">delete</i>
+                    </a>
                 </div>
             </div>
         </div>

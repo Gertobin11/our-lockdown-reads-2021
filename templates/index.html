@@ -8,11 +8,11 @@
                 <h4 class="amatic-font text-shadow">Tell us about your Lockdown Reads!</h4>
                 <p class="josefine-font">Create, Review and Read through a collection of reviewed books from <em>OUR
                         COMMUNITY</em></p>
-                <a id="review-cta-btn" class="waves-effect waves-light pale-gold-background btn"><i
+                <a href="{{ url_for('reviews') }}" id="review-cta-btn" class="waves-effect waves-light pale-gold-background btn"><i
                         class="material-icons left">cloud</i>Reviews</a>
-                <a id="register-cta-btn" class="waves-effect waves-light pale-gold-background btn"><i
+                <a href="{{ url_for('register') }}" id="register-cta-btn" class="waves-effect waves-light pale-gold-background btn"><i
                         class="material-icons left">cloud</i>Register</a>
-                <span id="cta-login-option"><small>Already Registered? Log In <a href="#">Here</a></small></span>
+                <span id="cta-login-option"><small>Already Registered? Log In <a href="{{ url_for('login') }}">Here</a></small></span>
             </div>
 
         </div>

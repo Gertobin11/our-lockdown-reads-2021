@@ -9,7 +9,7 @@
                 <div class="input-field margin-top-btm-20 col s8 offset-s2">
                     <i class="true-purple material-icons prefix">title</i>
                     <input id="book_name" name="book_name" type="text" minlength="3" maxlength="70" required
-                        class="black-text validate">
+                        class="black-text validate" value="{{ book.book_name }}">
                     <label for="book_name">Book Title</label>
                 </div>
             </div>
@@ -18,18 +18,22 @@
                 <div class="input-field margin-top-btm-20 col s8 offset-s2">
                     <i class="true-purple material-icons prefix">create</i>
                     <input id="book_author" name="book_author" type="text" minlength="3" maxlength="70" required
-                        class="black-text validate">
+                        class="black-text validate" value="{{ book.book_author }}">
                     <label for="book_author">Author</label>
                 </div>
             </div>
-            <!--dropdown selector for the book genre from genres db-->
+            <!--dropdown selector for the book genre from genres db which will have the previous selected genre in place-->
             <div class="row">
                 <div class="input-field col s8 offset-s2">
                     <i class="true-purple material-icons prefix">menu_book</i>
                     <select id="genre" name="genre" class="validate" required>
                         <option value="" disabled selected>Choose the books genre</option>
                         {% for genre in genres %}
-                        <option value="{{ genre.genre_name }}">{{ genre.genre_name }}</option>
+                            {% if genre.genre_name == book.genre %}
+                                <option value="{{ genre.genre_name }}"selected>{{ genre.genre_name }}</option>
+                            {% else %}
+                                <option value="{{ genre.genre_name }}">{{ genre.genre_name }}</option>
+                            {% endif %}
                         {% endfor %}
                     </select>
                     <label for="genre">Choose Genre</label>
@@ -40,7 +44,7 @@
                 <div class="input-field margin-top-btm-20 col s8 offset-s2">
                     <i class="true-purple material-icons prefix">star</i>
                     <input id="rating" name="rating" type="number" min="0" max="10" required
-                        class="black-text validate">
+                        class="black-text validate" value="{{ book.rating }}">
                     <label for="rating">Rating ( 0 - 10 )</label>
                 </div>
             </div>
@@ -49,7 +53,7 @@
                 <div class="input-field margin-top-btm-20 col s8 offset-s2">
                     <i class="true-purple material-icons prefix">title</i>
                     <input id="review_title" name="review_title" type="text" minlength="3" maxlength="70" required
-                        class="black-text validate">
+                        class="black-text validate" value="{{ book.review_title }}">
                     <label for="review_title">Review Title</label>
                 </div>
             </div>
@@ -57,7 +61,7 @@
             <div class="row">
                 <div class="input-field margin-top-btm-20 col s8 offset-s2">
                     <i class="true-purple material-icons prefix">create</i>
-                    <textarea id="review" name="review" class="materialize-textarea" required></textarea>
+                    <textarea id="review" name="review" class="materialize-textarea" required>{{ book.review }}</textarea>
                     <label for="review">Your Review</label>
                 </div>
             </div>
@@ -66,7 +70,7 @@
                 <div class="input-field margin-top-btm-20 col s8 offset-s2">
                     <i class="true-purple material-icons prefix">link</i>
                     <input id="image_url" name="image_url" type="text" minlength="3" required
-                        class="black-text validate">
+                        class="black-text validate" value="{{ book.image_url }}">
                     <label for="image_url">Book Cover URL</label>
                 </div>
             </div>
@@ -75,7 +79,7 @@
                 <div class="input-field margin-top-btm-20 col s8 offset-s2">
                     <i class="true-purple material-icons prefix">link</i>
                     <input id="purchase_link" name="purchase_link" type="text" minlength="3" required
-                        class="black-text validate">
+                        class="black-text validate" value="{{ book.purchase_link }}">
                     <label for="purchase_link">Link To Purchase Book</label>
                 </div>
             </div>
@@ -86,10 +90,11 @@
                         type="submit">Save Edit
                         <i class="material-icons right">send</i>
                     </button>
-                    <button class="margin-top-btm-20 btn waves-effect waves-light red black-text"
-                        type="submit">Cancel
+                    <!-- button to cancel which will redirect to profile page -->
+                    <a class="margin-top-btm-20 btn waves-effect waves-light red black-text"
+                        type="submit" href="{{ url_for('profile', username=session['user']) }}">Cancel
                         <i class="material-icons right">delete</i>
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>

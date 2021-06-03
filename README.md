@@ -142,30 +142,34 @@ and I will be able to add more genres if or split an over subscribed genre into
 
 ### Bugs / Fixes
 
-- Had an issue at the start of the project when I was installing flask anfd pymongo where I was getting 
+- __bug:__ Had an issue at the start of the project when I was installing flask anfd pymongo where I was getting 
 a linting error that it was an unresolved download.
 
-- I eventually had to start a new repository after an hour of using Google to try and solve the issue didnt work. 
+- __fix:__ I eventually had to start a new repository after an hour of using Google to try and solve the issue didnt work. 
  I copied and pasted the code I had wrote and installed all the appropriate files and it worked.
 
-- I created a custom class called deep-purple but instead of changing the text purple it was changing the background
+- __bug:__ I created a custom class called deep-purple but instead of changing the text purple it was changing the background
 
-- To solve this I opened chrome developer tools and found that deep-purple was a custom class created by materialize which hadthe background color set to important so I just altered
+- __fix:__ To solve this I opened chrome developer tools and found that deep-purple was a custom class created by materialize which hadthe background color set to important so I just altered
 the name of my class to true-purple and used it instead.
 
-- Encountered a bug where the profiles were not displaying evenly on the page , it appeared that some of the reviews were skipping the 
+- __bug:__ Encountered a bug where the profiles were not displaying evenly on the page , it appeared that some of the reviews were skipping the 
 columns allocated to them.
 
-- Trying to solve this problem I saw that the card content part of the cards was varying in height, causing the subsequent cards to 'pop' to
+- __fix:__ Trying to solve this problem I saw that the card content part of the cards was varying in height, causing the subsequent cards to 'pop' to
 the next column that had the appropriate space, I solved this by giving all the card content the uniform height of 75px.
 
-- I encountered a bug where the genre of the books reviewed was saving to the database as Null.
+- __bug:__ I encountered a bug where the genre of the books reviewed was saving to the database as Null.
 
-- I had the id of genre as genre_name instead of just genre as genre_name is used in a different database
+- __fix:__ I had the id of genre as genre_name instead of just genre as genre_name is used in a different database
 
-- I encountered a problem where the Return home button on the review page pushed to the right when only one item appeared on the bottom row
+- __bug:__ I encountered a problem where the Return home button on the review page pushed to the right when only one item appeared on the bottom row
 
-- I solved this problem by applying the css property of margin-right: 35vmin , to ensure that there was sufficient margin on the right to give the button its own row
+- __fix:__ I solved this problem by applying the css property of margin-right: 35vmin , to ensure that there was sufficient margin on the right to give the button its own row
+
+- __bug:__ I found an issue where pressing the back button when I wasnt logged in sent me to a 404 error
+
+- __fix:__ I solved this with an if statement which checked if the user was logged in and if the user was not logged in it sent them to the home page instead
 
 ### Deployment
 

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="row min-vh">
+    <h2 class="center-align bright-gold amatic-font text-shadow h3-header">Manage Genres</h2>
+    {% for genre in genres %}
+    <div class="col s12 m4">
+        <div class="card light-purple-background">
+            <div class="card-content white-text">
+                <span class="text-shadow card-title">Genre: {{ genre.genre_name }}</span>
+            </div>
+            <div class="card-action">
+                <!-- buttons to trigger the edit and delete functions for the reviews -->
+                <div class="card-action center-align">
+                    <a href="" class="waves-effect waves-light btn blue"><i class="material-icons left">edit</i>Edit</a>
+                    <!-- Modal Trigger -->
+                    <a href="#modal1" class="waves-effect waves-light modal-trigger btn red"><i
+                            class="material-icons left">delete</i>Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <h4 class="aqua-background">Are You Sure?</h4>
+        <p class="light-purple-background">To delete this genre, press the delete button below, otherwise press cancel
+        </p>
+    </div>
+    <div class="modal-footer">
+        <a href=""
+            class="waves-effect waves-light modal-trigger btn red">Delete</a>
+        <a href=""
+            class="modal-close waves-effect waves-green aqua-background btn-flat">Cancel</a>
+    </div>
+    {% endblock %}

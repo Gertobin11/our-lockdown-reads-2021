@@ -18,9 +18,16 @@
         </div>
     </div>
     {% endfor %}
+    <!-- if statement to decide where the back button takes the user  -->
+    {% if session.user %}
     <a class="col s2 offset-s5 block margin-top-btm-20 btn waves-effect waves-light bright-gold-background black-text" type="submit"
          id="return-home-btn" href="{{ url_for('profile', username=session['user']) }}">Return to Home
         <i class="material-icons right">arrow_back</i>
+    {% else %}
+    <a class="col s2 offset-s5 block margin-top-btm-20 btn waves-effect waves-light bright-gold-background black-text" type="submit"
+         id="return-home-btn" href="{{ url_for('home') }}">Return to Home
+        <i class="material-icons right">arrow_back</i>
+    {% endif %}
     </a>
 </div>
 

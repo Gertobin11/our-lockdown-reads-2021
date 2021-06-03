@@ -56,6 +56,10 @@
     color: #831D91;
 }
 
+.true-purple-background {
+    background-color: #831D91;
+}
+
 .pale-teal-background {
     background-color: #E1F9F5;
 }
@@ -93,6 +97,10 @@
 
 .margin-btm-0 {
     margin-bottom: 0px;
+}
+
+.min-vh {
+    min-height: 70vh;
 }
 
 .margin-top-0 {
@@ -199,6 +207,12 @@ nav .sidenav-trigger i {
     padding-bottom: 35px;
     border: 3px solid #f2e065;
     background-color: rgba(193,145,200, 0.8);
+}
+
+.carousel .carousel-item>img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
 }
 
 /* Stylings for registration page */

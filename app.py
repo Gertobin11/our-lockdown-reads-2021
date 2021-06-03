@@ -22,7 +22,8 @@ mongo = PyMongo(app)
 @app.route("/home")
 def home():
     books = list(mongo.db.books.find())
-    return render_template("index.html", books=books)
+    ratings = mongo.db.books.find().sort("rating", -1)[:5]
+    return render_template("index.html", books=books, ratings=ratings)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -163,6 +164,12 @@ def delete_review(book_id):
     mongo.db.books.remove({"_id": ObjectId(book_id)})
     flash("Your Review was successfully removed")
     return redirect(url_for('profile', username=session['user']))
+
+
+@app.route("/manage_genres")
+def manage_genres():
+    genres = mongo.db.genres.find().sort("genre_name")
+    return render_template("manage_genres.html", genres=genres)
 
 
 if __name__ == "__main__":

@@ -1,8 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
-
+<h2 class="center-align bright-gold amatic-font text-shadow h3-header">Manage Genres</h2>
+<div class="row">
+    <div class="col s12 center-align">
+        <a href="{{ url_for('add_genre') }}" class="josefin-font btn-large black-text text-shadow bright-gold-background">
+            <i class="black-text text-shadow material-icons prefix">add</i> Add Category</a>
+    </div>
+</div>
 <div class="row min-vh">
-    <h2 class="center-align bright-gold amatic-font text-shadow h3-header">Manage Genres</h2>
     {% for genre in genres %}
     <div class="col s12 m4">
         <div class="card light-purple-background">
@@ -14,7 +19,7 @@
                 <div class="card-action center-align">
                     <a href="" class="waves-effect waves-light btn blue"><i class="material-icons left">edit</i>Edit</a>
                     <!-- Modal Trigger -->
-                    <a href="#modal1" class="waves-effect waves-light modal-trigger btn red"><i
+                    <a href="" class="waves-effect waves-light modal-trigger btn red"><i
                             class="material-icons left">delete</i>Delete</a>
                 </div>
             </div>
@@ -23,7 +28,7 @@
     {% endfor %}
 </div>
 <!-- Modal Structure -->
-<div id="modal1" class="modal">
+<div id="" class="modal">
     <div class="modal-content">
         <h4 class="aqua-background">Are You Sure?</h4>
         <p class="light-purple-background">To delete this genre, press the delete button below, otherwise press cancel

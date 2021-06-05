@@ -174,7 +174,11 @@ the next column that had the appropriate space, I solved this by giving all the 
 - __bug:__ I encountered a bug in development when I logged out with a user account that it brought me back to login page as expected,
 but if I pressed back it returned me to the previous page and still had access to the logged in menu.
 
-_ __fix:__ I resolved this issue by checking if there was a session: object at the start of the function and redirecting to the login page
+- __fix:__ I resolved this issue by checking if there was a session: object at the start of the function and redirecting to the login page
+
+- __bug:__ I found a bug whenever I tried to delete a 2nd or 3rd book in a users profile I deleted the first book instead.
+
+- __fix:__ I fixed this issue by putting the book_id in the modal id
 
 ### Deployment
 

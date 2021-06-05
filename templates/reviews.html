@@ -7,7 +7,7 @@
         <div class="card">
             <div class="card-image">
                 <img src="{{ book.image_url }}">
-                <span class="card-title">{{ book.book_name }} <small> by {{ book.book_author }}</small></span>
+                <span class="card-title">{{ book.book_name }} <small> <br>by {{ book.book_author }}</small></span>
             </div>
             <div class="card-content">
                 <p>{{ book.review_title }} <small>by {{ book.reviewed_by }}</small></p>
@@ -20,15 +20,15 @@
     {% endfor %}
     <!-- if statement to decide where the back button takes the user  -->
     {% if session.user %}
-    <a class="col s2 offset-s5 block margin-top-btm-20 btn waves-effect waves-light bright-gold-background black-text" type="submit"
-         id="return-home-btn" href="{{ url_for('profile', username=session['user']) }}">Return to Home
+    <a class="col s2 offset-s5 block margin-top-btm-20 btn waves-effect waves-light bright-gold-background black-text"
+        type="submit" id="return-home-btn" href="{{ url_for('profile', username=session['user']) }}">Return to Home
         <i class="material-icons right">arrow_back</i>
-    {% else %}
-    <a class="col s2 offset-s5 block margin-top-btm-20 btn waves-effect waves-light bright-gold-background black-text" type="submit"
-         id="return-home-btn" href="{{ url_for('home') }}">Return to Home
-        <i class="material-icons right">arrow_back</i>
-    {% endif %}
-    </a>
+        {% else %}
+        <a class="col s2 offset-s5 block margin-top-btm-20 btn waves-effect waves-light bright-gold-background black-text"
+            type="submit" id="return-home-btn" href="{{ url_for('home') }}">Return to Home
+            <i class="material-icons right">arrow_back</i>
+            {% endif %}
+        </a>
 </div>
 
 

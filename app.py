@@ -210,6 +210,24 @@ def manage_genres():
         return redirect(url_for("login"))
 
 
+@app.route("/add_genre", methods=["GET", "POST"])
+# function to add a new genre to the database
+def add_genre():
+    # check to ensure only admin can add a genre
+    if session["user"] == "admin":
+        if request.method == "POST":
+            genre = {
+               "genre_name": request.form.get("genre_name")
+            }
+            mongo.db.genres.insert(genre)
+            flash("New Genre Added!")
+            return redirect(url_for("manage_genres"))
+
+        return render_template("add_genre.html")
+    else:
+        return redirect(url_for("login"))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

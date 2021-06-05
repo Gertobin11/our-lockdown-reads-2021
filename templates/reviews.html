@@ -6,14 +6,15 @@
     <div class="col s12 m6 l4">
         <div class="card">
             <div class="card-image">
-                <img src="{{ book.image_url }}">
+                <img src="{{ book.image_url }}" alt="cover image for {{ book.book_name }}">
                 <span class="card-title">{{ book.book_name }} <small> <br>by {{ book.book_author }}</small></span>
             </div>
-            <div class="card-content">
+            <div class="light-purple-background card-content">
                 <p>{{ book.review_title }} <small>by {{ book.reviewed_by }}</small></p>
             </div>
-            <div class="card-action">
-                <a href="{{ url_for('display_book', book_id=book._id) }}">Read my review here!!!</a>
+            <div class="card-action center-align">
+                <a class="black-text pale-gold-background text-shadow josefin-font"
+                    href="{{ url_for('display_book', book_id=book._id) }}">Read my review here!!!</a>
             </div>
         </div>
     </div>

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <div id="book-display-container" class=" row center-align aqua-background">
-    <img src="{{book.image_url}}" alt="image of the chosen books cover or scene">
+    <img src="{{book.image_url}}" alt="image of the chosen books cover or scene" onerror="imgError(this);">
     <h2 class="bright-gold amatic-font text-shadow">{{ book.book_name}} <em>by {{ book.book_author}}</em></h2>
     <h4 class="light-purple josefin-font text-shadow">{{ book.review_title }} <em> reviewed by
             {{ book.reviewed_by }}</em></h4>

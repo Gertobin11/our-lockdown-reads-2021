@@ -264,6 +264,10 @@ nav .sidenav-trigger i {
     width: 100%;
 }
 
+.card .card-action { 
+    background-color: #C8C191;
+}
+
 /* added this styling to stop the button pushing up right */
 
 #return-home-btn {

@@ -22,15 +22,18 @@
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">
                         arrow_back_ios</i><span class="josefine-font text-shadow"> Side Nav </span></a>
                 <ul class="right hide-on-med-and-down">
+                    <!-- home and review options available to all users -->
                     <li class="light-purple-background"><a class="text-shadow-teal amatic-font"
                             href="{{ url_for('home') }}">Home</a></li>
-                    {% if session.user %}
-                        <li class="light-purple-background"><a class="text-shadow-teal amatic-font border-left"
+                    <li class="light-purple-background"><a class="text-shadow-teal amatic-font border-left"
                                 href="{{ url_for('reviews') }}">Reviews</a></li>
+                    {% if session.user %}
+                    <!-- manage genres available to admin only -->
                         {% if session.user|lower == "admin"|lower %}
                             <li class="light-purple-background"><a class="text-shadow-teal amatic-font border-left"
                                     href="{{ url_for('manage_genres') }}">Manage Genres</a></li>
                         {% endif %}
+                        <!-- the logged in user section -->
                         <li class="light-purple-background"><a class="text-shadow-teal amatic-font border-left"
                                 href="{{ url_for('add_review') }}">Add A Review</a></li>
                         <li class="light-purple-background"><a class="text-shadow-teal amatic-font border-left"
@@ -38,6 +41,7 @@
                         <li class="light-purple-background"><a class="text-shadow-teal amatic-font border-left"
                                 href="{{ url_for('logout') }}">Log Out </a></li>
                     {% else %}
+                        <!-- unregistered user section -->
                         <li class="light-purple-background"><a class="text-shadow-teal amatic-font border-left"
                                 href="{{ url_for('login') }}">Log In</a></li>
                         <li class="light-purple-background"><a class="text-shadow-teal amatic-font border-left"
@@ -51,27 +55,31 @@
             <li>
                 <h3 class="text-shadow amatic-font teal-background">Menu</h3>
             </li>
-                <li class="navbar-mob"><a class="text-shadow amatic-font light-purple-background"
-                        href="{{ url_for('home') }}">Home</a></li>
-                {% if session.user %}
-                    <li class="navbar-mob"><a class="text-shadow amatic-font light-purple-background"
-                            href="{{ url_for('reviews') }}">Reviews</a></li>
-                    {% if session.user|lower == "admin"|lower %}
-                        <li class="light-purple-background"><a class="text-shadow-teal amatic-font border-left"
-                                href="{{ url_for('manage_genres') }}">Manage Genres</a></li>
-                    {% endif %}
-                    <li class="navbar-mob"><a class="text-shadow amatic-font light-purple-background"
-                            href="{{ url_for('add_review') }}">Add A Review</a></li>
-                    <li class="navbar-mob"><a class="text-shadow amatic-font light-purple-background"
-                            href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-                    <li class="navbar-mob"><a class="text-shadow amatic-font light-purple-background"
-                            href="{{ url_for('logout') }}">Log Out</a></li>
-                {% else %}
-                    <li class="navbar-mob"><a class="text-shadow amatic-font light-purple-background"
-                            href="{{ url_for('login') }}">Log In</a></li>
-                    <li class="navbar-mob"><a class="text-shadow amatic-font light-purple-background"
-                            href="{{ url_for('register') }}">Register</a></li>
+            <!-- home and reviews section available to all users -->
+            <li class="navbar-mob"><a class="text-shadow amatic-font light-purple-background"
+                    href="{{ url_for('home') }}">Home</a></li>
+            <li class="light-purple-background"><a class="text-shadow-teal amatic-font border-left"
+                    href="{{ url_for('reviews') }}">Reviews</a></li>
+            {% if session.user %}
+                {% if session.user|lower == "admin"|lower %}
+                    <!-- admin section to alter the genres -->
+                    <li class="light-purple-background"><a class="text-shadow-teal amatic-font border-left"
+                            href="{{ url_for('manage_genres') }}">Manage Genres</a></li>
                 {% endif %}
+                <!-- registered users section -->
+                <li class="navbar-mob"><a class="text-shadow amatic-font light-purple-background"
+                        href="{{ url_for('add_review') }}">Add A Review</a></li>
+                <li class="navbar-mob"><a class="text-shadow amatic-font light-purple-background"
+                            href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                <li class="navbar-mob"><a class="text-shadow amatic-font light-purple-background"
+                        href="{{ url_for('logout') }}">Log Out</a></li>
+            {% else %}
+                <!-- section for unregistered users -->
+                <li class="navbar-mob"><a class="text-shadow amatic-font light-purple-background"
+                        href="{{ url_for('login') }}">Log In</a></li>
+                <li class="navbar-mob"><a class="text-shadow amatic-font light-purple-background"
+                        href="{{ url_for('register') }}">Register</a></li>
+            {% endif %}
         </ul>
     </header>
 

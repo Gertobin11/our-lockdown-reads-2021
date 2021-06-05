@@ -231,7 +231,7 @@ def add_genre():
 @app.route("/edit_genre/<genre_id>", methods=["GET", "POST"])
 # function for editing the select genre
 def edit_genre(genre_id):
-    # validation check to ensure user is logged in 
+    # validation check to ensure user is logged in
     if session:
         if session["user"]:
             if request.method == "POST":
@@ -244,6 +244,19 @@ def edit_genre(genre_id):
 
         genre = mongo.db.genres.find_one({"_id": ObjectId(genre_id)})
         return render_template("edit_genre.html", genre=genre)
+
+    else:
+        return redirect(url_for("login"))
+
+
+@app.route("/delete_genre/<genre_id>")
+# function to delete a selected genre
+def delete_genre(genre_id):
+    # validation check
+    if session:
+        mongo.db.genres.remove({"_id": ObjectId(genre_id)})
+        flash("Genre Successfully Removed!")
+        return redirect(url_for("manage_genres"))
 
     else:
         return redirect(url_for("login"))

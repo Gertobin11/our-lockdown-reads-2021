@@ -85,13 +85,19 @@ def login():
     return render_template("login.html")
 
 
+# added defensive programming so if a user logged out and
+#  pressed back it would take them to the log in screen
+
+
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-    books = mongo.db.books.find()
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
-    if session["user"]:
-        return render_template("profile.html", username=username, books=books)
+    if session:
+        books = mongo.db.books.find()
+        username = mongo.db.users.find_one(
+            {"username": session["user"]})["username"]
+        if session["user"]:
+            return render_template(
+                "profile.html", username=username, books=books)
     return redirect(url_for("login"))
 
 
@@ -115,6 +121,10 @@ def display_book(book_id):
     return render_template("display_book.html", book=book)
 
 
+# added defensive programming to sto an error when logged out
+#  and returning to this page
+
+
 @app.route("/add_review", methods=["GET", "POST"])
 def add_review():
     if request.method == "POST":
@@ -132,31 +142,40 @@ def add_review():
         mongo.db.books.insert_one(review)
         flash("Your review has been recieved!")
         return redirect(url_for("reviews"))
-    genres = mongo.db.genres.find().sort("genre_name", 1)
-    return render_template("add_review.html", genres=genres)
+
+    elif session:
+        genres = mongo.db.genres.find().sort("genre_name", 1)
+        return render_template("add_review.html", genres=genres)
+
+    else:
+        return redirect(url_for("login"))
 
 
 @app.route("/edit_review/<book_id>", methods=["GET", "POST"])
 def edit_review(book_id):
-    if request.method == "POST":
-        submit = {
-            "book_name": request.form.get("book_name"),
-            "book_author": request.form.get("book_author"),
-            "genre": request.form.get("genre"),
-            "rating": request.form.get("rating"),
-            "review_title": request.form.get("review_title"),
-            "review": request.form.get("review"),
-            "reviewed_by": session["user"],
-            "image_url": request.form.get("image_url"),
-            "purchase_link": request.form.get("purchase_link")
-        }
-        mongo.db.books.update({"_id": ObjectId(book_id)}, submit)
-        flash("Your review has been edited successfully")
-        return redirect(url_for('profile', username=session['user']))
+    if session:
+        if request.method == "POST":
+            submit = {
+                "book_name": request.form.get("book_name"),
+                "book_author": request.form.get("book_author"),
+                "genre": request.form.get("genre"),
+                "rating": request.form.get("rating"),
+                "review_title": request.form.get("review_title"),
+                "review": request.form.get("review"),
+                "reviewed_by": session["user"],
+                "image_url": request.form.get("image_url"),
+                "purchase_link": request.form.get("purchase_link")
+            }
+            mongo.db.books.update({"_id": ObjectId(book_id)}, submit)
+            flash("Your review has been edited successfully")
+            return redirect(url_for('profile', username=session['user']))
 
-    book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
-    genres = mongo.db.genres.find().sort("genre_name", 1)
-    return render_template("edit_review.html", book=book, genres=genres)
+        book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
+        genres = mongo.db.genres.find().sort("genre_name", 1)
+        return render_template("edit_review.html", book=book, genres=genres)
+
+    else:
+        return redirect(url_for("login"))
 
 
 @app.route("/delete_review/<book_id>")

@@ -171,6 +171,11 @@ the next column that had the appropriate space, I solved this by giving all the 
 
 - __fix:__ I solved this with an if statement which checked if the user was logged in and if the user was not logged in it sent them to the home page instead
 
+- __bug:__ I encountered a bug in development when I logged out with a user account that it brought me back to login page as expected,
+but if I pressed back it returned me to the previous page and still had access to the logged in menu.
+
+_ __fix:__ I resolved this issue by checking if there was a session: object at the start of the function and redirecting to the login page
+
 ### Deployment
 
 ### Credits

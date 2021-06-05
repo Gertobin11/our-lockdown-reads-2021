@@ -26,11 +26,12 @@
                     <a href="{{ url_for('edit_review', book_id=book._id) }}"
                         class="waves-effect waves-light btn blue"><i class="material-icons left">edit</i>Edit</a>
                     <!-- Modal Trigger -->
-                    <a href="#modal1" class="waves-effect waves-light modal-trigger btn red"><i
+                    <a href="#modal1{{ book._id }}" class="waves-effect waves-light modal-trigger btn red"><i
                             class="material-icons left">delete</i>Delete</a>
 
                     <!-- Modal Structure -->
-                    <div id="modal1" class="modal">
+                    <!-- added book._id to target the selected book for deletion -->
+                    <div id="modal1{{ book._id }}" class="modal">
                         <div class="modal-content">
                             <h4 class="aqua-background">Are You Sure?</h4>
                             <p class="light-purple-background">To delete your review, press the delete button below, otherwise press cancel</p>

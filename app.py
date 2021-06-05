@@ -27,6 +27,7 @@ def home():
 
 
 @app.route("/register", methods=["GET", "POST"])
+# function for a user to register an account
 def register():
     if request.method == "POST":
         # conditional statement to check if username is already registered
@@ -58,6 +59,7 @@ def register():
 
 
 @app.route("/login", methods=["GET", "POST"])
+# function to log a registered user into their profile
 def login():
     if request.method == "POST":
         # check if username exists in db
@@ -85,16 +87,15 @@ def login():
     return render_template("login.html")
 
 
-# added defensive programming so if a user logged out and
-#  pressed back it would take them to the log in screen
-
-
 @app.route("/profile/<username>", methods=["GET", "POST"])
+# function displays the users profile with the users reviews
 def profile(username):
     if session:
         books = mongo.db.books.find()
         username = mongo.db.users.find_one(
             {"username": session["user"]})["username"]
+        # added defensive programming so if a user logged out and
+        # pressed back it would take them to the log in screen
         if session["user"]:
             return render_template(
                 "profile.html", username=username, books=books)
@@ -103,6 +104,7 @@ def profile(username):
 
 # function to log user out by clearing session user data cookie
 @app.route("/logout")
+# function to log the user out
 def logout():
     flash("You have been logged out! ")
     session.pop("user")
@@ -110,22 +112,21 @@ def logout():
 
 
 @app.route("/reviews")
+# function displays all the reviewed books
 def reviews():
     books = list(mongo.db.books.find())
     return render_template("reviews.html", books=books)
 
 
 @app.route("/reviews/<book_id>")
+# function for the user to view a selected review
 def display_book(book_id):
     book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
     return render_template("display_book.html", book=book)
 
 
-# added defensive programming to sto an error when logged out
-#  and returning to this page
-
-
 @app.route("/add_review", methods=["GET", "POST"])
+# function for the user to create their review
 def add_review():
     if request.method == "POST":
         review = {
@@ -143,6 +144,8 @@ def add_review():
         flash("Your review has been recieved!")
         return redirect(url_for("reviews"))
 
+    # added defensive programming to stop
+    # an error when logged out and returning to this page
     elif session:
         genres = mongo.db.genres.find().sort("genre_name", 1)
         return render_template("add_review.html", genres=genres)
@@ -152,8 +155,12 @@ def add_review():
 
 
 @app.route("/edit_review/<book_id>", methods=["GET", "POST"])
+# a function for a user to edit their submitted review
 def edit_review(book_id):
+    # added defensive programming to stop
+    # an error when logged out and returning to this page
     if session:
+        # if a user edits a review it will send them back to their profile page
         if request.method == "POST":
             submit = {
                 "book_name": request.form.get("book_name"),
@@ -179,16 +186,28 @@ def edit_review(book_id):
 
 
 @app.route("/delete_review/<book_id>")
+# function for a user to delete a users review
 def delete_review(book_id):
-    mongo.db.books.remove({"_id": ObjectId(book_id)})
-    flash("Your Review was successfully removed")
-    return redirect(url_for('profile', username=session['user']))
+    if session["user"]:
+        mongo.db.books.remove({"_id": ObjectId(book_id)})
+        flash("Your Review was successfully removed")
+        return redirect(url_for('profile', username=session['user']))
+
+    else:
+        return redirect(url_for("login"))
 
 
 @app.route("/manage_genres")
+# function to open the manage genres page
 def manage_genres():
-    genres = mongo.db.genres.find().sort("genre_name")
-    return render_template("manage_genres.html", genres=genres)
+    # added defensive programming to stop
+    # an error when logged out and returning to this page
+    if session:
+        genres = mongo.db.genres.find().sort("genre_name")
+        return render_template("manage_genres.html", genres=genres)
+
+    else:
+        return redirect(url_for("login"))
 
 
 if __name__ == "__main__":

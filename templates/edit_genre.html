@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="center-align bright-gold amatic-font text-shadow h3-header">Edit A Genre!</h2>
+<div class="row min-vh">
+    <form class="col s12" method="POST" action="{{ url_for('edit_genre', genre_id=genre._id) }}">
+        <div class="card pale-teal-background">
+            <!-- input for adding a new genre -->
+            <div class="row">
+                <div class="input-field margin-top-btm-20 col s8 offset-s2">
+                    <i class="true-purple material-icons prefix">edit</i>
+                    <input id="genre_name" value="{{ genre.genre_name }}" name="genre_name" type="text" minlength="3" maxlength="25" required
+                        class="black-text validate">
+                    <label for="genre_name">Edit Genre Name</label>
+                </div>
+            </div>
+            <!-- submit button -->
+            <div class="row">
+                <div class="center-align">
+                    <button class="margin-top-btm-20 btn waves-effect waves-light bright-gold-background black-text"
+                        type="submit">Complete Edit
+                        <i class="material-icons right">send</i>
+                    </button>
+                    <!-- added button to return to profile for cancelling -->
+                    <a class="margin-top-btm-20 btn waves-effect waves-light red black-text" type="submit"
+                        href="{{ url_for('manage_genres') }}">Cancel
+                        <i class="material-icons right">delete</i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

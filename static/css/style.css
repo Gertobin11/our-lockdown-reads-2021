@@ -36,6 +36,10 @@
     font-size: 2.1em;
 }
 
+.huge-font {
+    font-size: 3em;
+}
+
 .background-view-height {
     min-height: 100vh;
 }
@@ -273,4 +277,10 @@ nav .sidenav-trigger i {
     height: 45vh;
     object-fit: contain;
     margin-top: 45px;
+}
+
+/* style for the manage genres page */
+
+.card .card-content .card-title {
+    font-size: 2.1em;
 }

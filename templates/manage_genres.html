@@ -3,21 +3,21 @@
 <h2 class="center-align bright-gold amatic-font text-shadow h3-header">Manage Genres</h2>
 <div class="row">
     <div class="col s12 center-align">
-        <a href="{{ url_for('add_genre') }}" class="josefin-font btn-large black-text text-shadow bright-gold-background">
-            <i class="black-text text-shadow material-icons prefix">add</i> Add Category</a>
+        <a href="{{ url_for('add_genre') }}" class="margin-top-btm-20 big-font amatic-font btn-large black-text text-shadow bright-gold-background">
+            <i class="material-icons left">add</i>Add Genre!</a>
     </div>
 </div>
 <div class="row min-vh">
     {% for genre in genres %}
-    <div class="col s12 m4">
+    <div class="col s12 m6 l4">
         <div class="card light-purple-background">
             <div class="card-content white-text">
-                <span class="text-shadow card-title">Genre: {{ genre.genre_name }}</span>
+                <span class="black-text amatic-font center-align text-shadow card-title">Genre: {{ genre.genre_name }}</span>
             </div>
             <div class="card-action">
                 <!-- buttons to trigger the edit and delete functions for the reviews -->
                 <div class="card-action center-align">
-                    <a href="" class="waves-effect waves-light btn blue"><i class="material-icons left">edit</i>Edit</a>
+                    <a href="{{ url_for('edit_genre', genre_id=genre._id) }}" class="waves-effect waves-light btn blue"><i class="material-icons left">edit</i>Edit</a>
                     <!-- Modal Trigger -->
                     <a href="" class="waves-effect waves-light modal-trigger btn red"><i
                             class="material-icons left">delete</i>Delete</a>

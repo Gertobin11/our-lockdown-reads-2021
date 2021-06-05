@@ -228,6 +228,27 @@ def add_genre():
         return redirect(url_for("login"))
 
 
+@app.route("/edit_genre/<genre_id>", methods=["GET", "POST"])
+# function for editing the select genre
+def edit_genre(genre_id):
+    # validation check to ensure user is logged in 
+    if session:
+        if session["user"]:
+            if request.method == "POST":
+                submit = {
+                    "genre_name": request.form.get("genre_name")
+                }
+                mongo.db.genres.update({"_id": ObjectId(genre_id)}, submit)
+                flash("Genre Successfully Updated!")
+                return redirect(url_for('manage_genres'))
+
+        genre = mongo.db.genres.find_one({"_id": ObjectId(genre_id)})
+        return render_template("edit_genre.html", genre=genre)
+
+    else:
+        return redirect(url_for("login"))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

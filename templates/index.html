@@ -25,7 +25,7 @@
         <div class="carousel">
             {% for rating in ratings %}
             <a class="bright-gold text-shadow carousel-item" href="{{ url_for('reviews') }}"><img
-                    src="{{ rating.image_url }}">Reviewed By: {{ rating.reviewed_by }} <br>
+                    src="{{ rating.image_url }}" alt="Book Cover of {{ rating.book_name }}">Reviewed By: {{ rating.reviewed_by }} <br>
                 {{ rating.rating }} / 10</a>
             {% endfor %}
         </div>

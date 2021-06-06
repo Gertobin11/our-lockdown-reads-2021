@@ -171,6 +171,8 @@ My wireframes are stored in .pdf format [here](static/wireframes/our-lockdown-re
 
 #### Manual Testing
 
+- You can find all the manual testing that I have done [here](manual_testing.md)
+
 #### Validation Checks 
 
 ### Bugs / Fixes
@@ -221,4 +223,6 @@ but if I pressed back it returned me to the previous page and still had access t
 
 - [canva.com](https://www.canva.com/) for the free pro trial which allowed me to create my logo.
 
-- 
+- [Code Institute](https://codeinstitute.net)
+who without their walkthrough project and very clear explanations of the concepts involved in undertaking a difficult project, without which 
+I wouldnt of been able to do this.

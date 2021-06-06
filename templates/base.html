@@ -63,7 +63,7 @@
             {% if session.user %}
                 {% if session.user|lower == "admin"|lower %}
                     <!-- admin section to alter the genres -->
-                    <li class="navbar-mob"><a class="text-shadow-teal amatic-font"
+                    <li class="navbar-mob"><a class="text-shadow-teal amatic-font light-purple-background"
                             href="{{ url_for('manage_genres') }}">Manage Genres</a></li>
                 {% endif %}
                 <!-- registered users section -->

@@ -146,25 +146,58 @@ My wireframes are stored in .pdf format [here](static/wireframes/our-lockdown-re
 
 ### Features
 
+- __Responsive Navbar:__ A navbar that responds to the users screen size, and collapses to a side nav on mobile devices. ![navbar](static/test-images/Our-Lockdown-Reads-responsive-admin-profile.png)
 
+- __A Carousel:__ A carousel that displays the top 5 rated reviews. ![carousel](static/test-images/Our-Lockdown-Reads-top-reviews-section.png)
+
+- __A Registered Users Profile Page:__  A page that displays all the reviews that a user has submitted , with options to edit and delete them.
+![profile page](static/test-images/Our-Lockdown-Reads-profile-view.png)
+
+- __A Page Displaying All The Reviews:__  A page that displays all the reviews all the reviews from every user
+![reviews](static/test-images/Our-Lockdown-Reads-reviews-not-logged-in.png)
+
+- __A page to display more information about a selected book:__ When you see a review that you like you can click a button 
+and it will bring you to the display book pge tht contain all the avaible information on the book and the users review.
+![book review](static/test-images/Our-Lockdown-Reads-select-review-page.png)
+
+- __An Affiliate Link:__ A link supplied by the user to the website where a book can be purchased. Other users can click on the link to purchase the book
+. This can be worked out later but for a business stand point this is essential
+ and would require more work.![affiliate link](static/test-images/Our-Lockdown-Reads-affiliate-link.png)
+
+### Future Features
+
+- I would like to implement a star rating that other users could rate reviews
+
+- I would also like to add a comment section after reviews to give feedback to users
 
 ### Technologies Used
 
-- HTML
+- __HTML:__ The HyperText Markup Language, or HTML is the
+ standard markup language for documents designed to be displayed in a web browser.
 
-- CSS
+- __CSS:__ Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language such as HTML. 
+ is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.[
 
-- JAVASCRIPT 
+- __JAVASCRIPT:__ JavaScript, often abbreviated as JS, is a programming language that conforms to the ECMAScript specification. JavaScript is high-level, often just-in-time compiled
+, and multi-paradigm. It has curly-bracket syntax, dynamic typing, prototype-based object-orientation, and first-class functions. 
 
-- JQUERY
+- __JQUERY:__ jQuery is a JavaScript library designed to simplify HTML DOM tree traversal
+ and manipulation, as well as event handling, CSS animation, and Ajax.
 
-- PYTHON 
+- __PYTHON:__ Python is an interpreted high-level general-purpose programming language.
+ Python's design philosophy emphasizes code readability with its notable use of significant indentation. 
+ Its language constructs as well as its object-oriented
+ approach aim to help programmers write clear, logical code for small and large-scale projects. 
 
-- MONGODB
+- __MONGODB:__ MongoDB is a source-available cross-platform document-oriented database program.
+ Classified as a NoSQL database program, MongoDB uses JSON-like documents with optional schemas.
+ MongoDB is developed by MongoDB Inc. and licensed under the Server Side Public License (SSPL)
 
-- PYMONGO 
+- __PYMONGO:__ PyMongo is a Python distribution containing tools for working with MongoDB,
+ and is the recommended way to work with MongoDB from Python.
 
-- FLASK
+- __FLASK:__ Flask is a micro web framework written in Python. It is classified as a microframework
+ because it does not require particular tools or libraries.
 
 
 ### Testing
@@ -174,6 +207,8 @@ My wireframes are stored in .pdf format [here](static/wireframes/our-lockdown-re
 - You can find all the manual testing that I have done [here](manual_testing.md)
 
 #### Validation Checks 
+
+- HTML checks via [w3validator](https://validator.w3.org/)
 
 ### Bugs / Fixes
 

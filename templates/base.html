@@ -82,19 +82,18 @@
             {% endif %}
         </ul>
     </header>
-
-    <section>
         <!-- Section for displaying our flashed messages-->
         {% with messages = get_flashed_messages() %}
             {% if messages %}
-                {% for message in messages %}
-                    <div class="row center-align text-shadow flashes aqua-background">
-                        <h3 class="bright-gold">{{ message }}</h3>
-                    </div>
-                {% endfor %}
+                <section>
+                    {% for message in messages %}
+                        <div class="row center-align text-shadow flashes aqua-background">
+                            <h3 class="bright-gold">{{ message }}</h3>
+                        </div>
+                    {% endfor %}
+                </section>
             {% endif %}
         {% endwith %}
-    </section>
 
     <main class="aqua-background">
     {% block content %}

@@ -4,13 +4,13 @@
 <div id="review-container" class="row">
     <form class="col s12" method="POST" action="{{ url_for('search') }}">
         <div class="valign-wrapper center-align card pale-teal-background">
-            <div class="input-field col s12 m7">
+            <div class="input-field col s12 m8">
                 <input type="text" name="query" minlength="3" id="query" class="validate" required>
-                <label for="query">Search here for Book or Author</label>
+                <label for="query">Search for Book/Author</label>
             </div>
-            <div class="col s12 m5">
-                <a class="btn light-purple-background black-text text-shadow" href="{{ url_for('reviews') }}">Reset</a>
-                <button class="btn bright-gold-background black-text text-shadow" type="submit">
+            <div class="col s12 m4">
+                <a class="margin-top-5 margin-btm-5 btn light-purple-background black-text text-shadow" href="{{ url_for('reviews') }}">Reset</a>
+                <button class="margin-top-5 margin-btm-5 btn bright-gold-background black-text text-shadow" type="submit">
                     Search
                 </button>
             </div>

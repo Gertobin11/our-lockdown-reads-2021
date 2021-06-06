@@ -262,6 +262,14 @@ def delete_genre(genre_id):
         return redirect(url_for("login"))
 
 
+@app.route("/search", methods=["GET", "POST"])
+# function for search feature
+def search():
+    query = request.form.get("query")
+    books = list(mongo.db.books.find({"$text": {"$search": query}}))
+    return render_template("reviews.html", books=books)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

@@ -2,34 +2,53 @@
 {% block content %}
 <h2 class="h3-header bright-gold center-align amatic-font text-shadow">Our Reviews</h2>
 <div id="review-container" class="row">
-    {% for book in books %}
-    <div class="col s12 m6 l4">
-        <div class="card">
-            <div class="card-image">
-                <img src="{{ book.image_url }}" alt="cover image for {{ book.book_name }}">
-                <span class="card-title">{{ book.book_name }} <small> <br>by {{ book.book_author }}</small></span>
+    <form class="col s12" method="POST" action="{{ url_for('search') }}">
+        <div class="valign-wrapper center-align card pale-teal-background">
+            <div class="input-field col s12 m7">
+                <input type="text" name="query" minlength="3" id="query" class="validate" required>
+                <label for="query">Search here for Book or Author</label>
             </div>
-            <div class="light-purple-background card-content">
-                <p>{{ book.review_title }} <small>by {{ book.reviewed_by }}</small></p>
-            </div>
-            <div class="card-action center-align">
-                <a class="black-text pale-gold-background text-shadow josefin-font"
-                    href="{{ url_for('display_book', book_id=book._id) }}">Read my review here!!!</a>
+            <div class="col s12 m5">
+                <a class="btn light-purple-background black-text text-shadow" href="{{ url_for('reviews') }}">Reset</a>
+                <button class="btn bright-gold-background black-text text-shadow" type="submit">
+                    Search
+                </button>
             </div>
         </div>
-    </div>
-    {% endfor %}
-    <!-- if statement to decide where the back button takes the user  -->
-    {% if session.user %}
-    <a class="col s2 offset-s5 block margin-top-btm-20 btn waves-effect waves-light bright-gold-background black-text"
-        type="submit" id="return-home-btn" href="{{ url_for('profile', username=session['user']) }}">Return to Home
-        <i class="material-icons right">arrow_back</i>
+    </form>
+    {% if books|length > 0 %}
+        {% for book in books %}
+            <div class="col s12 m6 l4">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="{{ book.image_url }}" alt="cover image for {{ book.book_name }}">
+                        <span class="card-title">{{ book.book_name }} <small> <br>by {{ book.book_author }}</small></span>
+                    </div>
+                    <div class="light-purple-background card-content">
+                        <p>{{ book.review_title }} <small>by {{ book.reviewed_by }}</small></p>
+                    </div>
+                    <div class="card-action center-align">
+                        <a class="black-text pale-gold-background text-shadow josefin-font"
+                            href="{{ url_for('display_book', book_id=book._id) }}">Read my review here!!!</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <h2 class="min-vh-40 h3-header bright-gold center-align amatic-font text-shadow margin-top-btm-20">Sorry no results found, Try a different search</h2>
+    {% endif %}
+        <!-- if statement to decide where the back button takes the user  -->
+        {% if session.user %}
+            <a class="col s2 offset-s5 block margin-top-btm-20 btn waves-effect waves-light bright-gold-background black-text"
+                type="submit" id="return-home-btn" href="{{ url_for('profile', username=session['user']) }}">Return to Profile
+                <i class="material-icons right">arrow_back</i>
+            </a>
         {% else %}
-        <a class="col s2 offset-s5 block margin-top-btm-20 btn waves-effect waves-light bright-gold-background black-text"
-            type="submit" id="return-home-btn" href="{{ url_for('home') }}">Return to Home
-            <i class="material-icons right">arrow_back</i>
-            {% endif %}
-        </a>
+            <a class="col s2 offset-s5 block margin-top-btm-20 btn waves-effect waves-light bright-gold-background black-text"
+                type="submit" id="return-home-btn" href="{{ url_for('home') }}">Return to Home
+                <i class="material-icons right">arrow_back</i>
+            </a>
+        {% endif %}
 </div>
 
 

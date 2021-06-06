@@ -103,6 +103,10 @@
     margin-bottom: 0px;
 }
 
+.min-vh-40 {
+    min-height: 40vh;
+}
+
 .min-vh {
     min-height: 70vh;
 }

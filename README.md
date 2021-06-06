@@ -50,8 +50,6 @@ As a returning user I would like to:
 
 - Edit or Delete my book reviews
 
-- See if any other users liked my reviews
-
 - See if there is any new reviews since my last visit 
 
 ### Site Owner Goals 
@@ -70,7 +68,7 @@ I could generate revenue through my users purchasing books through the links pro
 - Well layed out UX design which is user friendly, easy to navigate,
 accessable and responsive
 
-- The user should be able to navigate easily throughout the site, this could easily be attained with theuse of a fixed navbar
+- The user should be able to navigate easily throughout the site, this could easily be attained with the use of a navbar
 
 - The site should be able to handle, access, store and present back the data to the user 
 in clear , strucured way
@@ -86,7 +84,7 @@ I have used mongodb to create 3 collections for storing the data , they are user
 storing our registered users passwords and username to access their profile and create, update and delete their reviews. All users registered 
 or not can read all reviews.
 the next collection is labelled Books and this will store all the data
-for the book in which a user has reviewed and willbe stored under the following keys
+for the book in which a user has reviewed and will be stored under the following keys
 
 - _id
 - book_name
@@ -102,22 +100,53 @@ for the book in which a user has reviewed and willbe stored under the following 
 with the data that has been input to the fields we should be able to create 
 an informative site hat is pleasing to the eye.
 
-Lastly I hav created a collection for genres which will relate to the genre 
+I will have a collection called users which will contain all registered users and their (hashed) passwords
+
+- username      :     this value will be used to fill in the reviewed_by field in the previous collection
+
+- password
+
+
+
+Lastly I have created a collection for genres which will relate to the genre 
 field of the previous database, this will help to organize the books by genre 
 and I will be able to add more genres if or split an over subscribed genre into 
 2 seperate genres.
+
+gernre       :     this value will be an option for users to select when submitting a reviewed book
 
 ## Design Choices 
 
 ### Fonts
 
+- The font that I have chosen for headers and titles on my site was [Amatic SC](https://fonts.google.com/specimen/Amatic+SC) from Google fonts
+
+- For the main paragraphs and bodies of text I chose [Josefin](https://fonts.google.com/specimen/Josefin+Sans) also from Google fonts
+
 ### Colour Scheme
+
+- ![#26a69a](https://via.placeholder.com/15/26a69a/000000?text=+) `#26a69a` This aqua colour was used mainly for the backgrounds
+
+- ![#f2e065](https://via.placeholder.com/15/f2e065/000000?text=+) `#f2e065` This bright gold colour was used for headings and for the backgound colour of buttons
+
+- ![#C191C8](https://via.placeholder.com/15/C191C8/000000?text=+) `#C191C8` This pale purple was used in the navbar and as a background colour in our review cards
+
+- I used these colours and slight variants throughout the website. They are triadic colours and I got them from [w3schools]("https://www.w3schools.com/colors/colors_schemes.asp)
 
 ### Icons
 
+- I used the built in Icons that come with materialize, Material Icons ,
+which can be found [here](https://fonts.google.com/icons)
+
 ### Wireframing
 
+- I built my projects on the outlines of these wireframes , my design has 
+changed a bit throughout development , but these were instrumental in building the foundation of my project.
+My wireframes are stored in .pdf format [here](static/wireframes/our-lockdown-reads-wireframes.pdf)
+
 ### Features
+
+
 
 ### Technologies Used
 
@@ -139,6 +168,10 @@ and I will be able to add more genres if or split an over subscribed genre into
 
 
 ### Testing
+
+#### Manual Testing
+
+#### Validation Checks 
 
 ### Bugs / Fixes
 

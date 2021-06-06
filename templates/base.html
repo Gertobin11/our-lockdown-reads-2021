@@ -58,12 +58,12 @@
             <!-- home and reviews section available to all users -->
             <li class="navbar-mob"><a class="text-shadow amatic-font light-purple-background"
                     href="{{ url_for('home') }}">Home</a></li>
-            <li class="light-purple-background"><a class="text-shadow-teal amatic-font border-left"
+            <li class="navbar-mob"><a class="text-shadow-teal amatic-font light-purple-background"
                     href="{{ url_for('reviews') }}">Reviews</a></li>
             {% if session.user %}
                 {% if session.user|lower == "admin"|lower %}
                     <!-- admin section to alter the genres -->
-                    <li class="light-purple-background"><a class="text-shadow-teal amatic-font border-left"
+                    <li class="navbar-mob"><a class="text-shadow-teal amatic-font"
                             href="{{ url_for('manage_genres') }}">Manage Genres</a></li>
                 {% endif %}
                 <!-- registered users section -->

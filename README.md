@@ -210,6 +210,28 @@ and it will bring you to the display book pge tht contain all the avaible inform
 
 - HTML checks via [w3validator](https://validator.w3.org/)
 
+- All pages have passed HTML you can see the results 
+
+- [login](static/validation-images/Showing-results-for-http-our-lockdown-reads-herokuapp-com-login-Nu-Html-Checker.png)
+
+- [add review](static/validation-images/Showing-results-for-http-our-lockdown-reads-herokuapp-com-add_review-Nu-Html-Checker.png)
+
+- [edit genre](static/validation-images/Showing-results-for-http-our-lockdown-reads-herokuapp-com-edit_genre-60bbeec4ebb8a36e86746b87-Nu-Html-Checker.png)
+
+- [manage genres](static/validation-images/Showing-results-for-http-our-lockdown-reads-herokuapp-com-manage_genres-Nu-Html-Checker.png)
+
+- [reviews](static/validation-images/Showing-results-for-http-our-lockdown-reads-herokuapp-com-reviews-Nu-Html-Checker.png)
+
+- [home](static/validation-images/Showing-results-for-http-our-lockdown-reads-herokuapp-com-home-Nu-Html-Checker.png)
+
+- [register](static/validation-images/Showing-results-for-http-our-lockdown-reads-herokuapp-com-register-Nu-Html-Checker.png)
+
+- For CSS validation I used [jigsaw](https://jigsaw.w3.org/css-validator/)
+
+- My custom css passed but I encountered 1 error with the materialize package I installed, You can see that [here](static/validation-images/css-validation.png)
+
+- For my JavaScript/jQuery I used [JShint](https://jshint.com/) which showed no errors , you can see the results [here](static/validation-images/js-validation.png)
+
 ### Bugs / Fixes
 
 - __bug:__ Had an issue at the start of the project when I was installing flask anfd pymongo where I was getting 

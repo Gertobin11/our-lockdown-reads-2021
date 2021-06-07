@@ -37,22 +37,18 @@
     {% else %}
         <h2 class="min-vh-40 h3-header bright-gold center-align amatic-font text-shadow margin-top-btm-20">Sorry no results found, Try a different search</h2>
     {% endif %}
-        <!-- if statement to decide where the back button takes the user  -->
-        {% if session.user %}
-            <a class="col s2 offset-s5 block margin-top-btm-20 btn waves-effect waves-light bright-gold-background black-text"
-                id="return-home-btn" href="{{ url_for('profile', username=session['user']) }}">Return to Profile
-                <i class="material-icons right">arrow_back</i>
-            </a>
-        {% else %}
-            <a class="col s2 offset-s5 block margin-top-btm-20 btn waves-effect waves-light bright-gold-background black-text"
-                id="return-home-btn" href="{{ url_for('home') }}">Return to Home
-                <i class="material-icons right">arrow_back</i>
-            </a>
-        {% endif %}
+     <!-- if statement to decide where the back button takes the user  -->
+    {% if session.user %}
+        <a class="col s2 offset-s5 block margin-top-btm-20 btn waves-effect waves-light bright-gold-background black-text"
+            id="return-home-btn" href="{{ url_for('profile', username=session['user']) }}">Return to Profile
+            <i class="material-icons right">arrow_back</i>
+        </a>
+    {% else %}
+        <a class="col s2 offset-s5 block margin-top-btm-20 btn waves-effect waves-light bright-gold-background black-text"
+            id="return-home-btn" href="{{ url_for('home') }}">Return to Home
+            <i class="material-icons right">arrow_back</i>
+        </a>
+    {% endif %}
 </div>
-
-
-
-
 
 {% endblock %}

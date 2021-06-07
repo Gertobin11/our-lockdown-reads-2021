@@ -170,6 +170,10 @@ and it will bring you to the display book pge tht contain all the avaible inform
 
 - I would also like to add a comment section after reviews to give feedback to users
 
+- I would also like to implement pagination for when the website starts to grow
+
+- I would also like to add a sort function for users to find reviews more easily
+
 ### Technologies Used
 
 - __HTML:__ The HyperText Markup Language, or HTML is the
@@ -199,6 +203,35 @@ and it will bring you to the display book pge tht contain all the avaible inform
 - __FLASK:__ Flask is a micro web framework written in Python. It is classified as a microframework
  because it does not require particular tools or libraries.
 
+ - __Git:__ Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.
+Git is easy to learn and has a tiny footprint with lightning fast performance. It outclasses SCM tools like Subversion,CVS, Perforce
+, and ClearCase with features like cheap local branching, convenient
+ staging areas, and multiple workflows.
+
+ - __Github:__ GitHub is a Git repository hosting service, but it adds many of its own features. While Git is a command line tool, GitHub provides a Web-based graphical interface.
+  It also provides access control and several collaboration features, such as a wikis and basic task management tools for every project.
+
+- __Materialize:__ Materialize CSS is a UI component library which is created with CSS, JavaScript and HTML. It is created and designed by Google. Materialize CSS is also known
+ as Material Design. ... Google's goal is to develop a system of design that allows for a unified user experience across all their products on any platform.
+
+- __Gitpod:__ Gitpod is a container-based development platform that puts developer experience first. Gitpod provisions ready-to-code development environments in the cloud accessible
+ through your browser and your local IDE (stay tuned for a blog post with more details on that).
+
+ - __VSCODE:__ Visual Studio Code is a source-code editor made by Microsoft for Windows, Linux and macOS. Features include support for debugging, syntax highlighting,
+  intelligent code completion, snippets, code refactoring, and embedded Git.
+
+- Along with the above mentined technologies I also instlled the following technologies which you can also view in the requirements
+file these include:
+
+- click==8.0.1
+- dnspython==2.1.0
+- Flask==2.0.1
+- Flask-PyMongo==2.3.0
+- itsdangerous==2.0.1
+- Jinja2==3.0.1
+- MarkupSafe==2.0.1
+- pymongo==3.11.4
+- Werkzeug==2.0.1
 
 ### Testing
 
@@ -274,6 +307,49 @@ but if I pressed back it returned me to the previous page and still had access t
 
 ### Deployment
 
+#### My deployment to Heroku
+
+1. Logged in to my Heroku account and created a new app called `our_lockdown_reads`
+
+2. Ensure that you have __both__ the `Procfile` and `requirements.txt` in your local repository.
+
+    - The `Procfile` should contain the following line of code:
+
+        - web: python app.py
+
+    - To create your `requirements.txt` file, or ensure that it is up to date, input the following line of code in your terminal:
+
+        - pip freeze > requirements.txt
+    
+
+3. Setup __Automatic Deployment__ by connecting Heroku to my GitHub repository(`Gertobin11/our-lockdown-reads-2021`).
+
+    1. In the top menu, I clicked the __Deployment__ tab and then __Connect to GitHub__ within the __Deployment Method__ section
+
+    2. I linked my GitHub account(`Gertobin11`) to Heroku in order to establish automatic deployment by clicking the __Connect to GitHub__ button
+
+    3. __Search__ for my GitHub repository(`our-lockdown-reads-2021`) and clicked __Connect__
+
+    4. I clicked __Enable Automatic Deploys__ in order to finalize automatic deployment
+
+
+4. I Navigated to the __Settings__ tab and scrolled down to the __Config Vars__ section. I clicked __Reveal Config Vars__
+
+
+5. I added the following __key value__ pairs, these were the __exact same__ as what I listed in my local `env.py` file :
+
+- IP: 0.0.0.0
+- PORT: 5000
+- MONGO_URI: <`YOUR_MONGO_URI`>
+- MONGO_DBNAME: <`YOUR_MONGO_DBNAME`>
+- SECRET_KEY: <`YOUR_SECRET_KEY`>
+
+6. My App was successfully built and deployed on Heroku
+
+The database __must__ contain all the collections in order for the application to run properly.
+These include: `users`, `gernres` and `books`
+
+
 ### Credits
 
 - [randomkeygen.com](https://randomkeygen.com/) for allowing me to create a secure secret key.
@@ -282,4 +358,7 @@ but if I pressed back it returned me to the previous page and still had access t
 
 - [Code Institute](https://codeinstitute.net)
 who without their walkthrough project and very clear explanations of the concepts involved in undertaking a difficult project, without which 
-I wouldnt of been able to do this.
+I wouldnt of been able to do this. My deployed of the app was also learned from Code Institute
+
+- [Materialze](https://materializecss.com/) The layout and grid system I used was from materialize. This helped streamline the development , with lots of readymade components 
+and pre written js

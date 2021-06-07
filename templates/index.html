@@ -24,9 +24,10 @@
         <h4 class="josefine-font text-shadow">Our Top User Rated Reviews</h4>
         <div class="carousel">
             {% for rating in ratings %}
-            <a class="bright-gold text-shadow carousel-item" href="{{ url_for('reviews') }}"><img
-                    src="{{ rating.image_url }}" alt="Book Cover of {{ rating.book_name }}">Reviewed By: {{ rating.reviewed_by }} <br>
-                {{ rating.rating }} / 10</a>
+                <!-- added the url of clicked on review to bring user to specific review clicked -->
+                <a class="bright-gold text-shadow carousel-item" href="{{ url_for('display_book', book_id=rating._id) }}"><img
+                        src="{{ rating.image_url }}" alt="Book Cover of {{ rating.book_name }}">Reviewed By: {{ rating.reviewed_by }} <br>
+                    {{ rating.rating }} / 10</a>
             {% endfor %}
         </div>
     </div>

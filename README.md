@@ -142,6 +142,37 @@ which can be found [here](https://fonts.google.com/icons)
 
 - I built my projects on the outlines of these wireframes , my design has 
 changed a bit throughout development , but these were instrumental in building the foundation of my project.
+I used [Balsamiq](https://balsamiq.com/wireframes/) for my wireframes.
+- ![wireframe landing page](static/wireframes/our-lockdown-reads-landing-page-wireframes.png)
+
+- ![wireframe landing page mobile](static/wireframes/our-lockdown-reads-landing-page-wireframes-mobile-version.png)
+
+- ![wirefram landing page tablet](static/wireframes/our-lockdown-reads-landing-page-wireframes-tablet-version.png)
+
+- ![wireframe login](static/wireframes/our-lockdown-reads-login-wireframes.png)
+
+- ![wireframe login mobile](static/wireframes/our-lockdown-reads-login-wireframes-mobile-version.png)
+
+- ![wireframe login tablet](static/wireframes/our-lockdown-reads-login-wireframes-tablet-version.png)
+
+- ![wireframe register](static/wireframes/our-lockdown-reads-register-wireframes.png)
+
+- ![wireframe register mobile](static/wireframes/our-lockdown-reads-register-wireframes-mobile-version.png)
+
+- ![wireframe register tablet](static/wireframes/our-lockdown-reads-register-wireframes-tablet-version.png)
+
+- ![wireframe review page](static/wireframes/our-lockdown-reads-review-page.png)
+
+- ![wireframe review page mobile](static/wireframes/our-lockdown-reads-review-page-mobile-version.png)
+
+- ![wireframe review page tablet](static/wireframes/our-lockdown-reads-review-page-tablet-version.png)
+
+- ![wireframe all reviews](static/wireframes/our-lockdown-reads-review-page-wireframes.png)
+
+- ![wireframe all reviews mobile](static/wireframes/our-lockdown-reads-review-page-wireframes-mobile-version.png)
+
+- ![wireframe all reviews tablet](static/wireframes/our-lockdown-reads-review-page-wireframes-tablet-version.png)
+
 My wireframes are stored in .pdf format [here](static/wireframes/our-lockdown-reads-wireframes.pdf)
 
 ### Features
@@ -245,19 +276,19 @@ file these include:
 
 - All pages have passed HTML you can see the results 
 
-- [login](static/validation-images/Showing-results-for-http-our-lockdown-reads-herokuapp-com-login-Nu-Html-Checker.png)
+- ![login](static/validation-images/results-for-http-our-lockdown-reads-herokuapp-com-login.png)
 
-- [add review](static/validation-images/Showing-results-for-http-our-lockdown-reads-herokuapp-com-add_review-Nu-Html-Checker.png)
+- ![add review](static/validation-images/results-for-http-our-lockdown-reads-herokuapp-com-add_review.png)
 
-- [edit genre](static/validation-images/Showing-results-for-http-our-lockdown-reads-herokuapp-com-edit_genre-60bbeec4ebb8a36e86746b87-Nu-Html-Checker.png)
+- ![edit genre](static/validation-images/results-for-http-our-lockdown-reads-herokuapp-com-edit_genre-60.png)
 
-- [manage genres](static/validation-images/Showing-results-for-http-our-lockdown-reads-herokuapp-com-manage_genres-Nu-Html-Checker.png)
+- ![manage genres](static/validation-images/results-for-http-our-lockdown-reads-herokuapp-com-manage_genres.png)
 
-- [reviews](static/validation-images/Showing-results-for-http-our-lockdown-reads-herokuapp-com-reviews-Nu-Html-Checker.png)
+- ![reviews](static/validation-images/results-for-http-our-lockdown-reads-herokuapp-com-reviews.png)
 
-- [home](static/validation-images/Showing-results-for-http-our-lockdown-reads-herokuapp-com-home-Nu-Html-Checker.png)
+- ![home](static/validation-images/results-for-https-our-lockdown-reads-herokuapp-com-home.png)
 
-- [register](static/validation-images/Showing-results-for-http-our-lockdown-reads-herokuapp-com-register-Nu-Html-Checker.png)
+- ![register](static/validation-images/results-for-https-our-lockdown-reads-herokuapp-com-register.png)
 
 - For CSS validation I used [jigsaw](https://jigsaw.w3.org/css-validator/)
 
@@ -349,6 +380,77 @@ but if I pressed back it returned me to the previous page and still had access t
 The database __must__ contain all the collections in order for the application to run properly.
 These include: `users`, `gernres` and `books`
 
+#### Local Deployment
+
+
+##### Requirements
+
+In order to deploy or use the application locally, you must ensure that following are installed:
+
+- [Python 3](https://www.python.org/)
+- [PIP](https://pypi.org/project/pip/)
+- [Git](https://git-scm.com/)
+
+You must have access to a **IDE** in order to deploy or run the project locally.
+
+##### Clone From GitHub Pages
+
+1. __Sign in__ to your __GitHub__ and locate the project's GitHub __repository__.
+
+2. Under the repository name, click the __green 'Clone' button__.
+
+3. To clone the repository using __HTTPS__, make sure the __HTTPS__ is clicked (it will be underlined in orange) and __copy the link__ provided.
+
+4. Open __Git Bash__
+
+5. Change your current working directory to the location where you want the cloned directory to be.
+
+6. In the __terminal__ type `git clone` and __paste the URL__ you copied in step 3.
+
+
+- $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+
+
+7. Press __Enter__ - your local clone is created.
+
+##### Installing Requirements
+
+1. Ensure that you are in the root directory at the terminal prompt. If you are  using a [virtual environment](#virtual-environment) ensure that you in the __.venv__ folder, indicated by `(.venv)` at the top of your terminal window
+
+2. Install all __requirement modules__ for the project, by using the following command in your terminal:
+
+- pip3 install -r requirements.txt
+
+#### Setting Up the Environment Variables
+
+
+1. Create a `env.py` file to store all your configurations. You can use the terminal do this by running the following command: `touch env.py`
+
+2. Enter the following code inside your `env.py` file:
+
+- import os
+
+- os.environ.setdefault("IP", "0.0.0.0")
+- os.environ.setdefault("PORT", "5000")
+- os.environ.setdefault("MONGO_URI", <YOUR_MONGO_URI>)
+- os.environ.setdefault("MONGO_DBNAME", <YOUR_MONGO_DBNAME>)
+- os.environ.setdefault("SECRET_KEY", <YOUR_SECREY_KEY>)
+
+3. Don't forget to reference your `env.py` in your main `app.py` file (or whatever you wish to call it) with the following code:
+
+- if os.path.exists("env.py"):
+    import env
+
+4. __Remember__ that your `env.py` is private information and __should not__ be disclosed in the repository. Before pushing anything to your repository, ensure that you have added `env.py` and `__pycache__` to your `.gitignore` file.
+
+
+5. To enable __Debug mode__, go to the last line of `app.py` and change `debug=False` to `debug=True`:
+
+
+
+The application can now be run locally. To do so use the following command in the terminal:
+
+- python app.py
 
 ### Credits
 

@@ -21,8 +21,10 @@
                         <div class="card-content">
                             <p>{{ book.review_title }} <small>by {{ book.reviewed_by }}</small></p>
                         </div>
-                        <!-- buttons to trigger the edit and delete functions for the reviews -->
+                        <!-- buttons to trigger the edit and delete  and read functions for the reviews -->
                         <div class="card-action center-align">
+                            <a href="{{ url_for('display_book', book_id=book._id) }}"
+                                class="waves-effect waves-light black-text modal-trigger btn bright-gold-background">Read</a>
                             <a href="{{ url_for('edit_review', book_id=book._id) }}"
                                 class="waves-effect waves-light btn blue"><i class="material-icons left">edit</i>Edit</a>
                             <!-- Modal Trigger -->
@@ -38,8 +40,6 @@
                                         otherwise press cancel</p>
                                 </div>
                                 <div class="modal-footer">
-                                    <a href="{{ url_for('display_book', book_id=book._id) }}"
-                                        class="waves-effect waves-light modal-trigger btn bright-gold-background">Read</a>
                                     <a href="{{ url_for('delete_review', book_id=book._id) }}"
                                         class="waves-effect waves-light modal-trigger btn red">Delete</a>
                                     <a href="{{ url_for('profile', username=session['user']) }}"

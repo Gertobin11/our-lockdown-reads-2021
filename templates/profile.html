@@ -11,42 +11,45 @@
         </div>
         <!-- template logic for showing the user just the reviews they created -->
         {% for book in books %}
-        {% if session.user|lower == book.reviewed_by|lower %}
-        <div class="col s12 m6 l4">
-            <div class="card">
-                <div id="card-img" class="card-image">
-                    <img src="{{ book.image_url }}" alt="cover image for {{ book.book_name }}">
-                    <span class="card-title">{{ book.book_name }} <small> by {{ book.book_author }}</small></span>
-                </div>
-                <div class="card-content">
-                    <p>{{ book.review_title }} <small>by {{ book.reviewed_by }}</small></p>
-                </div>
-                <!-- buttons to trigger the edit and delete functions for the reviews -->
-                <div class="card-action center-align">
-                    <a href="{{ url_for('edit_review', book_id=book._id) }}"
-                        class="waves-effect waves-light btn blue"><i class="material-icons left">edit</i>Edit</a>
-                    <!-- Modal Trigger -->
-                    <a href="#modal1{{ book._id }}" class="waves-effect waves-light modal-trigger btn red"><i
-                            class="material-icons left">delete</i>Delete</a>
-
-                    <!-- Modal Structure -->
-                    <!-- added book._id to target the selected book for deletion -->
-                    <div id="modal1{{ book._id }}" class="modal">
-                        <div class="modal-content">
-                            <h4 class="aqua-background">Are You Sure?</h4>
-                            <p class="light-purple-background">To delete your review, press the delete button below, otherwise press cancel</p>
+            {% if session.user|lower == book.reviewed_by|lower %}
+                <div class="col s12 m6 l4">
+                    <div class="card">
+                        <div id="card-img" class="card-image">
+                            <img src="{{ book.image_url }}" alt="cover image for {{ book.book_name }}">
+                            <span class="card-title">{{ book.book_name }} <small> by {{ book.book_author }}</small></span>
                         </div>
-                        <div class="modal-footer">
-                            <a href="{{ url_for('delete_review', book_id=book._id) }}"
-                                class="waves-effect waves-light modal-trigger btn red">Delete</a>
-                            <a href="{{ url_for('profile', username=session['user']) }}"
-                                class="modal-close waves-effect waves-green aqua-background btn-flat">Cancel</a>
+                        <div class="card-content">
+                            <p>{{ book.review_title }} <small>by {{ book.reviewed_by }}</small></p>
+                        </div>
+                        <!-- buttons to trigger the edit and delete functions for the reviews -->
+                        <div class="card-action center-align">
+                            <a href="{{ url_for('edit_review', book_id=book._id) }}"
+                                class="waves-effect waves-light btn blue"><i class="material-icons left">edit</i>Edit</a>
+                            <!-- Modal Trigger -->
+                            <a href="#modal1{{ book._id }}" class="waves-effect waves-light modal-trigger btn red"><i
+                                    class="material-icons left">delete</i>Delete</a>
+
+                            <!-- Modal Structure -->
+                            <!-- added book._id to target the selected book for deletion -->
+                            <div id="modal1{{ book._id }}" class="modal">
+                                <div class="modal-content">
+                                    <h4 class="aqua-background">Are You Sure?</h4>
+                                    <p class="light-purple-background">To delete your review, press the delete button below,
+                                        otherwise press cancel</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="{{ url_for('display_book', book_id=book._id) }}"
+                                        class="waves-effect waves-light modal-trigger btn bright-gold-background">Read</a>
+                                    <a href="{{ url_for('delete_review', book_id=book._id) }}"
+                                        class="waves-effect waves-light modal-trigger btn red">Delete</a>
+                                    <a href="{{ url_for('profile', username=session['user']) }}"
+                                        class="modal-close waves-effect waves-green aqua-background btn-flat">Cancel</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        {% endif %}
+            {% endif %}
         {% endfor %}
     </div>
 </section>

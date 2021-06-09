@@ -7,9 +7,6 @@ review books they have read during lockdown and read other members reviews of ot
 The website will build a database of the books our users have read and provide links to purchase 
 the books should our users choose to.
 
-
-## Table of contents
-
 ## UX 
 
 ### Project Goals
@@ -177,23 +174,23 @@ My wireframes are stored in .pdf format [here](static/wireframes/our-lockdown-re
 
 ### Features
 
-- __Responsive Navbar:__ A navbar that responds to the users screen size, and collapses to a side nav on mobile devices. ![navbar](static/test-images/Our-Lockdown-Reads-responsive-admin-profile.png)
+- __Responsive Navbar:__ A navbar that responds to the users screen size, and collapses to a side nav on mobile devices. ![navbar](static/test-images/our-lockdown-reads-responsive-admin-profile.png)
 
-- __A Carousel:__ A carousel that displays the top 5 rated reviews. ![carousel](static/test-images/Our-Lockdown-Reads-top-reviews-section.png)
+- __A Carousel:__ A carousel that displays the top 5 rated reviews. ![carousel](static/test-images/our-lockdown-reads-top-reviews-section.png)
 
 - __A Registered Users Profile Page:__  A page that displays all the reviews that a user has submitted , with options to edit and delete them.
-![profile page](static/test-images/Our-Lockdown-Reads-profile-view.png)
+![profile page](static/test-images/our-lockdown-reads-profile-view.png)
 
 - __A Page Displaying All The Reviews:__  A page that displays all the reviews all the reviews from every user
-![reviews](static/test-images/Our-Lockdown-Reads-reviews-not-logged-in.png)
+![reviews](static/test-images/our-lockdown-reads-reviews-not-logged-in.png)
 
 - __A page to display more information about a selected book:__ When you see a review that you like you can click a button 
 and it will bring you to the display book pge tht contain all the avaible information on the book and the users review.
-![book review](static/test-images/Our-Lockdown-Reads-select-review-page.png)
+![book review](static/test-images/our-lockdown-reads-select-review-page.png)
 
 - __An Affiliate Link:__ A link supplied by the user to the website where a book can be purchased. Other users can click on the link to purchase the book
 . This can be worked out later but for a business stand point this is essential
- and would require more work.![affiliate link](static/test-images/Our-Lockdown-Reads-affiliate-link.png)
+ and would require more work.![affiliate link](static/test-images/our-lockdown-reads-affiliate-link.png)
 
 ### Future Features
 

@@ -126,8 +126,8 @@ def display_book(book_id):
 
 
 @app.route("/add_review", methods=["GET", "POST"])
-# function for the user to create their review
 def add_review():
+    # function for the user to create their review
     if request.method == "POST":
         review = {
             "book_name": request.form.get("book_name"),
@@ -155,8 +155,8 @@ def add_review():
 
 
 @app.route("/edit_review/<book_id>", methods=["GET", "POST"])
-# a function for a user to edit their submitted review
 def edit_review(book_id):
+    # a function for a user to edit their submitted review
     # added defensive programming to stop
     # an error when logged out and returning to this page
     if session:
